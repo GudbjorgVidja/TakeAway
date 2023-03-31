@@ -1,0 +1,16 @@
+.list-cell{
+-fx-font: 8pt "Consolas";
+}
+
+.innskrad{
+-fx-image: url("notandiMynd.png");
+}
+
+
+.borderpane{
+-fx-background-color: lightsteelblue;
+-fx-pref-height: 283;
+-fx-pref-width: 200;
+-fx-spacing: 5;
+-fx-padding: 5;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import vidmot.takeaway.MatsedillView?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" stylesheets="@PontunStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.takeaway.PontunController">
+    <children>
+        <Button fx:id="greidaHnappur" layoutX="301.0" layoutY="436.0" onAction="#fxGreidaHandler" text="Ganga frá pöntun" />
+        <MatsedillView fx:id="matsedillView" layoutX="30.0" layoutY="122.0" prefHeight="352.0" />
+        <Button fx:id="innskraning" layoutX="384.0" layoutY="37.0" mnemonicParsing="false" onAction="#fxInnskraningHandler" text="Nýskráning" />
+        <BorderPane layoutX="269.0" layoutY="122.0" styleClass="borderpane">
+            <center>
+                <ListView fx:id="karfaListView" onMouseClicked="#fxTakaUrKorfuHandler" prefHeight="291.0" prefWidth="180.0" BorderPane.alignment="CENTER" />
+            </center>
+            <top>
+                <Label styleClass="Label-Karfa" text="Karfa" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Harlow Solid Italic" size="20.0" />
+                    </font>
+                </Label>
+            </top>
+            <bottom>
+                <HBox prefHeight="24.0" prefWidth="190.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label prefHeight="17.0" prefWidth="49.0" text="Samtals: ">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Label>
+                        <Label fx:id="heildarverd" prefHeight="17.0" prefWidth="122.0">
+                     <HBox.margin>
+                        <Insets top="2.0" />
+                     </HBox.margin></Label>
+                    </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </BorderPane.margin>
+                </HBox>
+            </bottom>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+        </BorderPane>
+        <HBox alignment="CENTER_LEFT" layoutX="23.0" layoutY="22.0" prefHeight="55.0" prefWidth="213.0">
+            <children>
+                <ImageView fx:id="avatar" fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" />
+                <Label fx:id="notandi" alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="139.0">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

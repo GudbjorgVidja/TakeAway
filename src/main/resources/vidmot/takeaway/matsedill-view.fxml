@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<fx:root prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: #C7D6E4" type="BorderPane"
+         stylesheets="@matsedillStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <ListView fx:id="matsedillListi" prefHeight="275.0" prefWidth="190.0" BorderPane.alignment="CENTER">
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </BorderPane.margin>
+        </ListView>
+    </center>
+    <top>
+        <Label alignment="CENTER" prefHeight="35.0" prefWidth="190.0" text="Matseðill" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+            <font>
+                <Font name="Harlow Solid Italic" size="22.0"/>
+            </font>
+        </Label>
+    </top>
+    <opaqueInsets>
+        <Insets/>
+    </opaqueInsets>
+</fx:root>
