@@ -10,7 +10,7 @@ import javafx.beans.property.StringProperty;
 
 public class Veitingar {
     private StringProperty matur;
-    private IntegerProperty verd = new SimpleIntegerProperty();
+    private IntegerProperty verd;
 
     public Veitingar(String m, int v) {
         matur = new SimpleStringProperty(m);
@@ -21,10 +21,9 @@ public class Veitingar {
         return verd;
     }
 
-
-    //gera tab misoft eftir lengd matur strengs
+    //Notar sniðinn streng
     public String toString() {
         return String.format("%-22s %6d", matur.get(), verd.get());
     }
-    
+
 }
