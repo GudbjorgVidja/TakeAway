@@ -6,7 +6,6 @@ package vidmot.takeaway;
 public enum View {
     PONTUN("pontun-view.fxml"),
     GREIDSLA("greidsla-view.fxml"),
-
     VIDSKIPTAVINUR("vidskipti-view.fxml");
 
 
