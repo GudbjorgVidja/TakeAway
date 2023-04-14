@@ -3,6 +3,8 @@ package vinnsla.takeaway;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class VeitingarTest {
     private Veitingar veitingar;
     private int verd;
@@ -17,15 +19,8 @@ public class VeitingarTest {
 
     @Test
     public void testVeitingarVerd() {
-        assert (veitingar.getVerd().get() == verd);
+        assertEquals(veitingar.getVerd().get(), verd);
     }
+    
 
-
-
-    /*
-    @Test
-    public void testVeitingarRettur(){
-        //assert (veitingar.get);
-    }
-     */
 }

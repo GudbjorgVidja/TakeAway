@@ -47,9 +47,16 @@ public class KarfaTest {
     public void testHeildarverdTakaUr() {
         karfa.veitingarList().addAll(v1, v2);
         karfa.takaAfMatsedli(0);
-        //karfa.veitingarList().remove(0);
         assertEquals(karfa.getHeildarverd().get(), reiknaKarfaHeildarverd());
     }
+
+    @Test
+    public void testHeildarverdTakaUrHandvirkt() { //hafa þetta test líka?
+        karfa.veitingarList().addAll(v1, v2);
+        karfa.veitingarList().remove(0);
+        assertEquals(karfa.getHeildarverd().get(), reiknaKarfaHeildarverd());
+    }
+
 
     @Test
     public void testHeildarverdClearKarfa() {
