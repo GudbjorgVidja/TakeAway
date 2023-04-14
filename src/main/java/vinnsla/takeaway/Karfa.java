@@ -27,9 +27,19 @@ public class Karfa extends Matsedill {
         veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
             change.next();
             if (change.wasAdded()) {
-                heildarverd.setValue(heildarverd.getValue() + change.getAddedSubList().get(0).getVerd().getValue());
+                int heild = 0;
+                for (Veitingar v : change.getAddedSubList()) {
+                    heild += v.getVerd().get();
+                }
+                heildarverd.set(heildarverd.get() + heild);
+                //heildarverd.setValue(heildarverd.getValue() + change.getAddedSubList().get(0).getVerd().getValue());
             } else if (change.wasRemoved()) {
-                heildarverd.setValue(heildarverd.getValue() - change.getRemoved().get(0).getVerd().getValue());
+                int heild = 0;
+                for (Veitingar v : change.getRemoved()) {
+                    heild += v.getVerd().get();
+                }
+                heildarverd.set(heildarverd.get() - heild);
+                //heildarverd.setValue(heildarverd.getValue() - change.getRemoved().get(0).getVerd().getValue());
             }
         });
     }
