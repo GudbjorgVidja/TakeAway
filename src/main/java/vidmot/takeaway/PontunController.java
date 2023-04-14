@@ -23,6 +23,8 @@ import java.util.Optional;
 
 public class PontunController {
     private Veitingar nuverandiRettur;//Veitingar hlutur sem síðast var ýtt á af matseðli (til að bæta í körfu)
+
+    //TODO initializa annars staðar
     private IntegerProperty indexUrKorfu = new SimpleIntegerProperty();//index hlutar sem smellt er á í körfu (til að fjarlægja)
     @FXML
     private Label heildarverd;//heildarverð label
@@ -152,7 +154,6 @@ public class PontunController {
     private void fxGreidaHandler(ActionEvent actionEvent) {
         ViewSwitcher.switchTo(View.GREIDSLA);
     }
-
 
     public Vidskiptavinur getVidskiptavinur() {
         return vidskiptavinur;

@@ -24,30 +24,7 @@ public class Veitingar {
 
     //gera tab misoft eftir lengd matur strengs
     public String toString() {
-        return matur.getValue() + fjoldiTab() + verd.intValue();
-        //return matur.getValue() + ": \t " + verd.intValue();
+        return String.format("%-22s %6d", matur.get(), verd.get());
     }
-
-    //hve oft kemur tab fyrir tiltekið orð
-    //heildarlengd(stafapláss)-pláss orðsins,/8 +1 ef %8!=0
-    private String fjoldiTab() {
-        int heildarfj = 32;
-        String tab = "";
-        String s = matur.get();
-        int afgangur = heildarfj - s.length();
-        int n;
-
-        n = afgangur / 8;
-        if (afgangur % 8 != 0) {
-            n += 1;
-        }
-        n -= 1;
-
-        for (int i = 0; i < n; i++) {
-            tab += "\t";
-        }
-
-        return tab;
-    }
-
+    
 }
