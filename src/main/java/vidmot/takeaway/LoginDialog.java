@@ -29,9 +29,5 @@ public class LoginDialog {
 
         if (utkoma.isPresent()) pontunController.setInnskradur(true);
     }
-
-
-    public static void main(String[] args) {
-
-    }
+    
 }

@@ -94,9 +94,5 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
         }
 
     }
-
-
-    public static void main(String[] args) {
-
-    }
+    
 }

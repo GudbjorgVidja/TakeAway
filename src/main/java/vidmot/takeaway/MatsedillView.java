@@ -62,9 +62,5 @@ public class MatsedillView extends BorderPane {
             matsedill.setjaGogn(stokStok[i], Integer.parseInt(stokStok[i + 1]));
         }
     }
-
-
-    public static void main(String[] args) {
-
-    }
+    
 }
