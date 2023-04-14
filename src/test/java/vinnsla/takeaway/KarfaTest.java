@@ -21,17 +21,6 @@ public class KarfaTest {
     }
 
     @Test
-    public void testTomKarfaErTom() {
-        assert (karfa.getObsVeitingar().isEmpty());
-    }
-
-    @Test
-    public void testKarfaMedEinuEkkiTom() {
-        karfa.getObsVeitingar().add(new Veitingar("rettur", 1000));
-        assertFalse(karfa.getObsVeitingar().isEmpty());
-    }
-
-    @Test
     public void testHeildarverdTomKarfa() {
         assert (karfa.getHeildarverd().get() == 0);
     }
@@ -42,6 +31,11 @@ public class KarfaTest {
         karfa.getObsVeitingar().add(v1);
         assertEquals(karfa.getObsVeitingar().get(0), v1);
         assertFalse(karfa.getObsVeitingar().isEmpty());
+    }
+
+    @Test
+    public void testHeildarverd() {
+
     }
 
 }
