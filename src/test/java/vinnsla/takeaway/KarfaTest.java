@@ -28,9 +28,9 @@ public class KarfaTest {
     @Test
     public void testGetAddedVeitingar() {
         Veitingar v1 = new Veitingar("rettur", 1000);
-        karfa.getObsVeitingar().add(v1);
-        assertEquals(karfa.getObsVeitingar().get(0), v1);
-        assertFalse(karfa.getObsVeitingar().isEmpty());
+        karfa.veitingarList().add(v1);
+        assertEquals(karfa.veitingarList().get(0), v1);
+        assertFalse(karfa.veitingarList().isEmpty());
     }
 
     @Test

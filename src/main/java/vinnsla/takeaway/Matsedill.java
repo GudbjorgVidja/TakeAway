@@ -9,15 +9,13 @@ import javafx.collections.ObservableList;
 
 public class Matsedill {
     private ObservableList<Veitingar> veitingar;
-    //private Veitingar rettur;
-
 
     /**
      * Smiður fyrir Matsedill klasann. Þegar nýr hlutur af klasanum Matsedill er gerður, þá er líka gerður veitingar
      * hlutur, sem er tilviksbreytan fyrir ObservableList
      */
     public Matsedill() {
-        veitingar = FXCollections.observableArrayList();//gera hér?
+        veitingar = FXCollections.observableArrayList();
     }
 
 
@@ -52,7 +50,7 @@ public class Matsedill {
     }
 
     //skilar observable listanum fyrir tiltekinn Matseðill hlut
-    public ObservableList<Veitingar> getObsVeitingar() {
+    public ObservableList<Veitingar> veitingarList() {
         return veitingar;
     }
 

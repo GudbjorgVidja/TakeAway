@@ -39,9 +39,9 @@ public class MatsedillView extends BorderPane {
         matsedill = new Matsedill();
         lesaInnVeitingar();
 
-        matsedillListi.setItems(matsedill.getObsVeitingar());
-        matsedill.getObsVeitingar().addListener((ListChangeListener<Veitingar>) change -> {
-            matsedillListi.setItems(matsedill.getObsVeitingar());
+        matsedillListi.setItems(matsedill.veitingarList());
+        matsedill.veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
+            matsedillListi.setItems(matsedill.veitingarList());
         });
 
     }

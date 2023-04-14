@@ -55,8 +55,8 @@ public class PontunController {
 
         heildarverdBinder();
 
-        karfa.getObsVeitingar().addListener((ListChangeListener<Veitingar>) change -> {
-            karfaListView.setItems(karfa.getObsVeitingar());
+        karfa.veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
+            karfaListView.setItems(karfa.veitingarList());
         });
 
         nyjastAfMatsedliListener();

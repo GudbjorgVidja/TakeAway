@@ -9,7 +9,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ListChangeListener;
 
 public class Karfa extends Matsedill {
-    private IntegerProperty heildarverd;//heildarverð á að uppfærast sjálfkrafa
+    private IntegerProperty heildarverd;//heildarverð fyrir alla hluti í körfu
 
     /**
      * Þegar ný karfa er gerð, þá er gerður nýr matseðill, sem inniheldur tóman observableList af veitingum.
@@ -24,7 +24,7 @@ public class Karfa extends Matsedill {
      * Finnur hvað bættist við eða var fjarlægt, og notar þær upplýsingar til að uppfæra heildarverð
      */
     private void heildarverdListenerRegla() {
-        getObsVeitingar().addListener((ListChangeListener<Veitingar>) change -> {//matsedillKarfa.getobs
+        veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
             change.next();
             if (change.wasAdded()) {
                 heildarverd.setValue(heildarverd.getValue() + change.getAddedSubList().get(0).getVerd().getValue());
@@ -51,12 +51,11 @@ public class Karfa extends Matsedill {
         matsedillinn.setjaGogn("steik", 6000);
         matsedillinn.setjaGogn("banani", 20);
 
-        System.out.println("\nFjöldi hluta á matseðli: " + matsedillinn.getObsVeitingar().size());
+        System.out.println("\nFjöldi hluta á matseðli: " + matsedillinn.veitingarList().size());
 
-        for (int i = 0; i < matsedillinn.getObsVeitingar().size(); i++) {
-            System.out.println(matsedillinn.getObsVeitingar().get(i));
+        for (int i = 0; i < matsedillinn.veitingarList().size(); i++) {
+            System.out.println(matsedillinn.veitingarList().get(i));
         }
-
 
     }
 }

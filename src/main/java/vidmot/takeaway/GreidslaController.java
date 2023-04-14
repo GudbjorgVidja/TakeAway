@@ -27,11 +27,11 @@ public class GreidslaController {
 
         geraGreidslutexta();
 
-        pontunController.getKarfa().getObsVeitingar().addListener((ListChangeListener<? super Veitingar>) change -> {
+        pontunController.getKarfa().veitingarList().addListener((ListChangeListener<? super Veitingar>) change -> {
             geraGreidslutexta();
         });
 
-        greidslaListView.setItems(pontunController.getKarfa().getObsVeitingar());
+        greidslaListView.setItems(pontunController.getKarfa().veitingarList());
     }
 
 
@@ -72,7 +72,7 @@ public class GreidslaController {
     private void fxStadfestingHandler(ActionEvent actionEvent) {
         stadfestingAlertDialog();
 
-        pontunController.getKarfa().getObsVeitingar().clear();
+        pontunController.getKarfa().veitingarList().clear();
         pontunController.getKarfa().getHeildarverd().set(0);
 
         ViewSwitcher.switchTo(View.PONTUN);
