@@ -27,8 +27,5 @@ public class Vidskiptavinur {
     public StringProperty getHeimilisfang() {
         return heimilisfang;
     }
-
-    public static void main(String[] args) {
-
-    }
+    
 }

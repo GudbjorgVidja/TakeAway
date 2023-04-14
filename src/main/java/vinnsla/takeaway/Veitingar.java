@@ -49,7 +49,5 @@ public class Veitingar {
 
         return tab;
     }
-
-    public static void main(String[] args) {
-    }
+    
 }

@@ -55,9 +55,5 @@ public class Matsedill {
     public ObservableList<Veitingar> getObsVeitingar() {
         return veitingar;
     }
-
-
-    public static void main(String[] args) {
-
-    }
+    
 }
