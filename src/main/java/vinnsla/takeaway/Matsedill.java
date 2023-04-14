@@ -8,7 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Matsedill {
-    private ObservableList<Veitingar> veitingar = FXCollections.observableArrayList(); //initializa í smið?
+    private ObservableList<Veitingar> veitingar;
     //private Veitingar rettur;
 
 
@@ -55,5 +55,5 @@ public class Matsedill {
     public ObservableList<Veitingar> getObsVeitingar() {
         return veitingar;
     }
-    
+
 }

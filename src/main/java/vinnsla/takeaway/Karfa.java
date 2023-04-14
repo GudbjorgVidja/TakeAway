@@ -9,13 +9,13 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ListChangeListener;
 
 public class Karfa extends Matsedill {
-    private IntegerProperty heildarverd = new SimpleIntegerProperty();//heildarverð á að uppfærast sjálfkrafa
+    private IntegerProperty heildarverd;//heildarverð á að uppfærast sjálfkrafa
 
     /**
      * Þegar ný karfa er gerð, þá er gerður nýr matseðill, sem inniheldur tóman observableList af veitingum.
      */
     public Karfa() {
-        heildarverd.setValue(0);
+        heildarverd = new SimpleIntegerProperty(0);
         heildarverdListenerRegla();
     }
 

@@ -9,12 +9,12 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Veitingar {
-    private StringProperty matur = new SimpleStringProperty();
+    private StringProperty matur;
     private IntegerProperty verd = new SimpleIntegerProperty();
 
     public Veitingar(String m, int v) {
-        matur.setValue(m);
-        verd.setValue(v);
+        matur = new SimpleStringProperty(m);
+        verd = new SimpleIntegerProperty(v);
     }
 
     public IntegerProperty getVerd() {
@@ -49,5 +49,5 @@ public class Veitingar {
 
         return tab;
     }
-    
+
 }
