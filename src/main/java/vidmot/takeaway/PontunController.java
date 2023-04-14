@@ -129,6 +129,7 @@ public class PontunController {
     //það er innskráður notandi
     public void setInnskradur(boolean b) {
         greidaHnappur.setDisable(false);
+        //TODO breyta þessu, kannski hafa ekkert viðfang?
     }
 
 

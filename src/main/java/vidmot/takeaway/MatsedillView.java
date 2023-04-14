@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class MatsedillView extends BorderPane {
 
-    private Matsedill matsedill;
+    private Matsedill matsedill; //vinnsluhluturinn
 
     @FXML
     private ListView<Veitingar> matsedillListi;
@@ -25,7 +25,7 @@ public class MatsedillView extends BorderPane {
 
     //Smiður sem les inn fxml skrá, og setur svo rót og controller sem this
     public MatsedillView() {
-
+        //TODO gera design pattern til að lesa inn fxml skrár? eða nota viewSwitcher?
         FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("matsedill-view.fxml"));
         fxmlloader.setRoot(this);
         fxmlloader.setController(this);
@@ -54,6 +54,7 @@ public class MatsedillView extends BorderPane {
     /**
      * Vesen með að lesa inn ur skrá og nennti ekki að skrifa heildalínnu tilað gera hvern rétt.
      * Geri langan streng, réttur og verð til skiptis, aðskilin með kommu. Splitta upp í fylki, og nota lykkju
+     * TODO lesa veitingarnar inn úr skrá? Líklega best að nota In
      */
     private void lesaInnVeitingar() {
         String runa = "Hamborgari, 2590, Kjötbollur, 3005, Kaffi, 200, Vatn, 990, Ávaxtasalat, 4490, Steik, 800, Kartöflusalat, 700, Gos, 500, Safi, 3000";
@@ -62,5 +63,5 @@ public class MatsedillView extends BorderPane {
             matsedill.setjaGogn(stokStok[i], Integer.parseInt(stokStok[i + 1]));
         }
     }
-    
+
 }

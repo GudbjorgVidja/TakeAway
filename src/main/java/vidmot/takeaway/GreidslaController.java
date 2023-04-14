@@ -57,13 +57,8 @@ public class GreidslaController {
         int klst = heildarbid / 60;
         int min = heildarbid - 60 * klst;
 
-        if (klst > 0) {
-            bid = klst + " klst";
-            if (min != 0) bid += " og ";
-        }
-        if (min != 0) {
-            bid += min + " mín";
-        }
+        if (klst > 0) bid = klst + " klst";
+        if (min != 0) bid += " og " + min + " mín";
         return bid;
     }
 
@@ -76,7 +71,7 @@ public class GreidslaController {
     @FXML
     private void fxStadfestingHandler(ActionEvent actionEvent) {
         stadfestingAlertDialog();
-        
+
         pontunController.getKarfa().getObsVeitingar().clear();
         pontunController.getKarfa().getHeildarverd().set(0);
 
