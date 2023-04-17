@@ -11,7 +11,7 @@ improved.
     - nota Maven project layout (kafli/verkefni 4)
     - support goals: compile, test, exec:java, package, site
 - Junit test fyrir bakendann
-    - e did not cover how to test user interfaces, so no need to test the UI, but you can test classes/the business
+    - we did not cover how to test user interfaces, so no need to test the UI, but you can test classes/the business
       logic behind the user interface.
 - UML design
     - Nota comment fyrir fxml skrár og enum (í View.java)
