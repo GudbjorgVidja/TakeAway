@@ -101,7 +101,7 @@ public class PontunController {
      * Þegar ýtt er á hlut á matseðli er hann sendur hingað og settur í körfu
      */
     private void fxSetjaIKorfuHandler() {
-        karfa.setjaMatsedil(valinnRetturAfMatsedli);
+        karfa.baetaVidMatsedil(valinnRetturAfMatsedli);
     }
 
     /**

@@ -32,7 +32,7 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
         setDialogPane(lesaVidskiptavinurDialog());
         getDialogPane().setHeaderText("Stofnaðu aðgang til að halda áfram\nVinsamlegast sláðu inn nafn og heimilisfang");
 
-        setBindingDialog();
+        setTextfieldBindingDialog();
 
         resultConverter();
 
@@ -44,7 +44,7 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
      * Gerir bindingu á milli textfield í dialognum og vidskiptavinur tilviksbreytunnar(nafn og heimilisfang. Ef annað breytist
      * þá gerir hitt það líka. Gengur í báðar áttir.
      */
-    private void setBindingDialog() {
+    private void setTextfieldBindingDialog() {
         nafnField.textProperty().bindBidirectional(vidskiptavinur.getNafn());
         heimilisfangField.textProperty().bindBidirectional(vidskiptavinur.getHeimilisfang());
     }

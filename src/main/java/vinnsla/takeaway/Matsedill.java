@@ -24,8 +24,9 @@ public class Matsedill {
     /**
      * Creates a new food item with the given name and price,
      * and adds it to the menu.
+     *
      * @param matur The name of the food item
-     * @param verd The price of the food item
+     * @param verd  The price of the food item
      */
     public void setjaGogn(String matur, int verd) {
         veitingar.add(new Veitingar(matur, verd));
@@ -33,15 +34,17 @@ public class Matsedill {
 
     /**
      * Adds a food item to the menu.
+     *
      * @param v The food item to add to the menu
      */
-    public void setjaMatsedil(Veitingar v) {
+    public void baetaVidMatsedil(Veitingar v) {
         veitingar.add(v);
     }
 
     /**
      * Removes a food item from the menu at the given index.
      * If the index is out of bounds, no item is removed.
+     *
      * @param index The index of the item to remove from the menu
      */
     public void takaAfMatsedli(int index) {
@@ -52,6 +55,7 @@ public class Matsedill {
 
     /**
      * Returns the list of food items in the menu.
+     *
      * @return The list of food items in the menu
      */
     public ObservableList<Veitingar> veitingarList() {
