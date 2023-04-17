@@ -118,7 +118,7 @@ public class PontunController {
             Optional<Vidskiptavinur> result = vidskiptiDialog.showAndWait();
             if (result.isPresent()) {
                 vidskiptavinur = result.get();
-                innskradUtlit();
+                setjaInnskradUtlit();
             }
 
         } else {
@@ -135,7 +135,7 @@ public class PontunController {
 
 
     //útlit sett á þegar einhver viðskiptavinur er í kerfinu, og innskráður
-    private void innskradUtlit() {
+    private void setjaInnskradUtlit() {
         avatar.getStyleClass().add("innskrad");
         notandi.setText(vidskiptavinur.getNafn().getValue());
         innskraning.setText("Innskráning");
