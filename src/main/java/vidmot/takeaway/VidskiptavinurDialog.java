@@ -21,13 +21,13 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
     @FXML
     private ButtonType fxILagi;//Buttontype hlutur, í lagi takkinn
 
-    private Vidskiptavinur vinur;//tilviksbreyta, skráningu nýs viðskiptavinar verður bætt inn í vinur
+    private Vidskiptavinur vidskiptavinur;//tilviksbreyta, skráningu nýs viðskiptavinar verður bætt inn í vidskiptavinur
 
     /**
-     * Smiðurinn tekur inn Vidskiptavinur hlut sem er null, og setur í tilviksbreytuna vinur.
+     * Smiðurinn tekur inn Vidskiptavinur hlut sem er null, og setur í tilviksbreytuna vidskiptavinur.
      */
     public VidskiptavinurDialog() {
-        vinur = new Vidskiptavinur(null, null);
+        vidskiptavinur = new Vidskiptavinur(null, null);
 
         setDialogPane(lesaVidskiptavinurDialog());
         getDialogPane().setHeaderText("Stofnaðu aðgang til að halda áfram\nVinsamlegast sláðu inn nafn og heimilisfang");
@@ -36,17 +36,17 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
 
         resultConverter();
 
-        iLagiRegla();
+        iLagiTakkiDisabledRegla();
     }
 
 
     /**
-     * Gerir bindingu á milli textfield í dialognum og vinur tilviksbreytunnar(nafn og heimilisfang. Ef annað breytist
+     * Gerir bindingu á milli textfield í dialognum og vidskiptavinur tilviksbreytunnar(nafn og heimilisfang. Ef annað breytist
      * þá gerir hitt það líka. Gengur í báðar áttir.
      */
     private void setBindingDialog() {
-        nafnField.textProperty().bindBidirectional(vinur.getNafn());
-        heimilisfangField.textProperty().bindBidirectional(vinur.getHeimilisfang());
+        nafnField.textProperty().bindBidirectional(vidskiptavinur.getNafn());
+        heimilisfangField.textProperty().bindBidirectional(vidskiptavinur.getHeimilisfang());
     }
 
 
@@ -54,7 +54,7 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
      * regla gerð fyrir það hvenær í lagi takkinn er óvirkur. Ef textfield fyrir nafn eða heimilisfang er tómt, þá er
      * takkinn óvirkur.
      */
-    private void iLagiRegla() {
+    private void iLagiTakkiDisabledRegla() {
         Node iLagi = getDialogPane().lookupButton(fxILagi);
         iLagi.disableProperty().bind(nafnField.textProperty().isEmpty().or(heimilisfangField.textProperty().isEmpty()));
     }
@@ -69,7 +69,7 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
     private void resultConverter() {
         setResultConverter(b -> {
             if (b.getButtonData() == ButtonBar.ButtonData.OK_DONE) {
-                return vinur;
+                return vidskiptavinur;
             } else {
                 return null;
             }
