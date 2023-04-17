@@ -22,10 +22,10 @@ import vinnsla.takeaway.Vidskiptavinur;
 import java.util.Optional;
 
 public class PontunController {
-    private Veitingar nuverandiRettur;//Veitingar hlutur sem síðast var ýtt á af matseðli (til að bæta í körfu)
+    private Veitingar valinnRetturAfMatsedli;//Veitingar hlutur sem síðast var ýtt á af matseðli (til að bæta í körfu)
 
     //TODO initializa annars staðar
-    private IntegerProperty indexUrKorfu = new SimpleIntegerProperty();//index hlutar sem smellt er á í körfu (til að fjarlægja)
+    private IntegerProperty indexRettsUrKorfu = new SimpleIntegerProperty();//index hlutar sem smellt er á í körfu (til að fjarlægja)
     @FXML
     private Label heildarverd;//heildarverð label
     @FXML
@@ -49,6 +49,7 @@ public class PontunController {
 
     //smiður fyrir pontunController
     public void initialize() {
+        //todo setja þessar þrjár línur í sér aðferð, t.d. upphafsstillaSenu
         karfa = new Karfa();
         vidskiptavinur = null;
         greidaHnappur.setDisable(true);
@@ -71,8 +72,8 @@ public class PontunController {
 
         int index = karfaListView.getSelectionModel().getSelectedIndex();
         if (index != -1) {
-            indexUrKorfu.set(index);
-            karfa.takaAfMatsedli(indexUrKorfu.intValue());
+            indexRettsUrKorfu.set(index);
+            karfa.takaAfMatsedli(indexRettsUrKorfu.intValue());
         }
 
     }
@@ -81,10 +82,10 @@ public class PontunController {
     /**
      * Setur í körfu það sem smellt er á af matseðli, leitar að selected hlut
      */
-    private void nyjastAfMatsedliListener() {
+    private void nyjastAfMatsedliListener() { //todo endurnefna sidastValidAfMatsedliListener, eða validAfMatsedliListener?
         matsedillView.getMatsedillListi().getSelectionModel().selectedItemProperty().addListener((observable, oldvalue, newValue) -> {
-            nuverandiRettur = matsedillView.getMatsedillListi().getSelectionModel().getSelectedItem();
-            System.out.println(nuverandiRettur);
+            valinnRetturAfMatsedli = matsedillView.getMatsedillListi().getSelectionModel().getSelectedItem();
+            System.out.println(valinnRetturAfMatsedli);
             fxSetjaIKorfuHandler();
         });
     }
@@ -100,7 +101,7 @@ public class PontunController {
      * Þegar ýtt er á hlut á matseðli er hann sendur hingað og settur í körfu
      */
     private void fxSetjaIKorfuHandler() {
-        karfa.setjaMatsedil(nuverandiRettur);
+        karfa.setjaMatsedil(valinnRetturAfMatsedli);
     }
 
     /**
@@ -118,12 +119,10 @@ public class PontunController {
             if (result.isPresent()) {
                 vidskiptavinur = result.get();
                 innskradUtlit();
-                avatar.getStyleClass().add("innskrad");
-                innskraning.setText("Innskráning");
             }
 
         } else {
-            LoginDialog innskraLykilord = new LoginDialog();
+            new LoginDialog();
         }
 
     }
@@ -139,6 +138,7 @@ public class PontunController {
     private void innskradUtlit() {
         avatar.getStyleClass().add("innskrad");
         notandi.setText(vidskiptavinur.getNafn().getValue());
+        innskraning.setText("Innskráning");
     }
 
     public Karfa getKarfa() {
