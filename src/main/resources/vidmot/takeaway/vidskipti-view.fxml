@@ -20,8 +20,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <TextField fx:id="nafnField" GridPane.columnIndex="1"/>
-                <TextField fx:id="heimilisfangField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextField fx:id="fxNafnField" GridPane.columnIndex="1"/>
+                <TextField fx:id="fxHeimilisfangField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 <Label text="Nafn: ">
                     <GridPane.margin>
                         <Insets left="40.0"/>

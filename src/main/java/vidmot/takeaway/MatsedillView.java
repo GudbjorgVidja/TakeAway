@@ -20,7 +20,7 @@ public class MatsedillView extends BorderPane {
     private Matsedill matsedill; //vinnsluhluturinn
 
     @FXML
-    private ListView<Veitingar> matsedillListi;
+    private ListView<Veitingar> fxMatsedill;
 
 
     //Smiður sem les inn fxml skrá, og setur svo rót og controller sem this
@@ -39,16 +39,16 @@ public class MatsedillView extends BorderPane {
         matsedill = new Matsedill();
         lesaInnVeitingar();
 
-        matsedillListi.setItems(matsedill.veitingarList());
+        fxMatsedill.setItems(matsedill.veitingarList());
         matsedill.veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
-            matsedillListi.setItems(matsedill.veitingarList());
+            fxMatsedill.setItems(matsedill.veitingarList());
         });
 
     }
 
     //skilar ListView hlut fyrir matseðilinn
-    public ListView<Veitingar> getMatsedillListi() {
-        return matsedillListi;
+    public ListView<Veitingar> getFxMatsedill() {
+        return fxMatsedill;
     }
 
     /**

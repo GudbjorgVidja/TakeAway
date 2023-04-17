@@ -8,6 +8,6 @@
             fx:controller="vidmot.takeaway.GreidslaController" stylesheets="@PontunStyle.css">
     <Button layoutX="107.0" layoutY="429.0" onAction="#fxStadfestingHandler" text="Staðfesta"/>
     <Button layoutX="324.0" layoutY="429.0" onAction="#fxTilBakaHandler" text="Hætta við"/>
-    <Label fx:id="greidsluUpplysingar" layoutX="107.0" layoutY="41.0" prefHeight="143.0" prefWidth="285.0"/>
-    <ListView fx:id="greidslaListView" layoutX="150.0" layoutY="198.0" prefHeight="200.0" prefWidth="200.0"/>
+    <Label fx:id="fxGreidsluUpplysingar" layoutX="107.0" layoutY="41.0" prefHeight="143.0" prefWidth="285.0"/>
+    <ListView fx:id="fxKarfaIPontun" layoutX="150.0" layoutY="198.0" prefHeight="200.0" prefWidth="200.0"/>
 </AnchorPane>

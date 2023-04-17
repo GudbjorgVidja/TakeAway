@@ -11,14 +11,14 @@ import javafx.collections.ObservableList;
  * Represents a menu of food items.
  */
 public class Matsedill {
-    private ObservableList<Veitingar> veitingar; // The list of food items in the menu
+    private ObservableList<Veitingar> veitingarListi; // The list of food items in the menu
 
     /**
      * Creates a new menu with an empty list of food items.
      * The list is implemented as an ObservableList for ease of use with JavaFX.
      */
     public Matsedill() {
-        veitingar = FXCollections.observableArrayList();
+        veitingarListi = FXCollections.observableArrayList();
     }
 
     /**
@@ -29,17 +29,20 @@ public class Matsedill {
      * @param verd  The price of the food item
      */
     public void setjaGogn(String matur, int verd) {
-        veitingar.add(new Veitingar(matur, verd));
+        veitingarListi.add(new Veitingar(matur, verd));
     }
 
     /**
      * Adds a food item to the menu.
      *
-     * @param v The food item to add to the menu
+     * @param veitingar The food item to add to the menu
      */
-    public void baetaVidMatsedil(Veitingar v) {
-        veitingar.add(v);
+    public void baetaVidMatsedil(Veitingar veitingar) {
+        veitingarListi.add(veitingar);
     }
+
+    //todo hafa annað hvort aðferðina setjaGogn eða baetaVidMatsedil, ekki bæði. Gera það sama með smá mismunandi parametra
+
 
     /**
      * Removes a food item from the menu at the given index.
@@ -48,8 +51,8 @@ public class Matsedill {
      * @param index The index of the item to remove from the menu
      */
     public void takaAfMatsedli(int index) {
-        if (!veitingar.isEmpty() && index >= 0 && index < veitingar.size()) {
-            veitingar.remove(index);
+        if (!veitingarListi.isEmpty() && index >= 0 && index < veitingarListi.size()) {
+            veitingarListi.remove(index);
         }
     }
 
@@ -59,6 +62,6 @@ public class Matsedill {
      * @return The list of food items in the menu
      */
     public ObservableList<Veitingar> veitingarList() {
-        return veitingar;
+        return veitingarListi;
     }
 }

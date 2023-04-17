@@ -15,9 +15,9 @@ import java.io.IOException;
 
 public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
     @FXML
-    private TextField nafnField;//viðmótshlutur, textfield þar sem notandi slær inn nafn
+    private TextField fxNafnField;//viðmótshlutur, textfield þar sem notandi slær inn nafn
     @FXML
-    private TextField heimilisfangField;//textfield fyrir heimilisfang
+    private TextField fxHeimilisfangField;//textfield fyrir heimilisfang
     @FXML
     private ButtonType fxILagi;//Buttontype hlutur, í lagi takkinn
 
@@ -45,8 +45,8 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
      * þá gerir hitt það líka. Gengur í báðar áttir.
      */
     private void setTextfieldBindingDialog() {
-        nafnField.textProperty().bindBidirectional(vidskiptavinur.getNafn());
-        heimilisfangField.textProperty().bindBidirectional(vidskiptavinur.getHeimilisfang());
+        fxNafnField.textProperty().bindBidirectional(vidskiptavinur.getNafn());
+        fxHeimilisfangField.textProperty().bindBidirectional(vidskiptavinur.getHeimilisfang());
     }
 
 
@@ -55,8 +55,8 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
      * takkinn óvirkur.
      */
     private void iLagiTakkiDisabledRegla() {
-        Node iLagi = getDialogPane().lookupButton(fxILagi);
-        iLagi.disableProperty().bind(nafnField.textProperty().isEmpty().or(heimilisfangField.textProperty().isEmpty()));
+        Node iLagiTakki = getDialogPane().lookupButton(fxILagi);
+        iLagiTakki.disableProperty().bind(fxNafnField.textProperty().isEmpty().or(fxHeimilisfangField.textProperty().isEmpty()));
     }
 
 

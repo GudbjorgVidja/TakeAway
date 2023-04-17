@@ -19,16 +19,18 @@ public class Vidskiptavinur {
 
     /**
      * Creates a new customer with the given name and address.
-     * @param n The customer's name
-     * @param h The customer's address
+     *
+     * @param nafn         The customer's name
+     * @param heimilisfang The customer's address
      */
-    public Vidskiptavinur(String n, String h) {
-        nafn = new SimpleStringProperty(n);
-        heimilisfang = new SimpleStringProperty(h);
+    public Vidskiptavinur(String nafn, String heimilisfang) {
+        this.nafn = new SimpleStringProperty(nafn);
+        this.heimilisfang = new SimpleStringProperty(heimilisfang);
     }
 
     /**
      * Returns the customer's name.
+     *
      * @return The customer's name
      */
     public StringProperty getNafn() {
@@ -37,6 +39,7 @@ public class Vidskiptavinur {
 
     /**
      * Returns the customer's address.
+     *
      * @return The customer's address
      */
     public StringProperty getHeimilisfang() {

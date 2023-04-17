@@ -17,16 +17,18 @@ public class Veitingar {
 
     /**
      * Creates a new food item with the given name and price.
-     * @param m The name of the food item
-     * @param v The price of the food item
+     *
+     * @param matur The name of the food item
+     * @param verd  The price of the food item
      */
-    public Veitingar(String m, int v) {
-        matur = new SimpleStringProperty(m);
-        verd = new SimpleIntegerProperty(v);
+    public Veitingar(String matur, int verd) {
+        this.matur = new SimpleStringProperty(matur);
+        this.verd = new SimpleIntegerProperty(verd);
     }
 
     /**
      * Returns the price of the food item.
+     *
      * @return The price of the food item
      */
     public IntegerProperty getVerd() {
@@ -37,6 +39,7 @@ public class Veitingar {
      * Returns a string representation of the food item in the format
      * "name        price", where "name" is left-aligned in a 22-character
      * field and "price" is right-aligned in a 6-character field.
+     *
      * @return A string representation of the food item
      */
     @Override

@@ -8,7 +8,7 @@
 <fx:root prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: #C7D6E4" type="BorderPane"
          stylesheets="@matsedillStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <center>
-        <ListView fx:id="matsedillListi" prefHeight="275.0" prefWidth="190.0" BorderPane.alignment="CENTER">
+        <ListView fx:id="fxMatsedill" prefHeight="275.0" prefWidth="190.0" BorderPane.alignment="CENTER">
             <opaqueInsets>
                 <Insets/>
             </opaqueInsets>

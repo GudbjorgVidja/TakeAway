@@ -25,39 +25,39 @@ public class PontunController {
     private Veitingar valinnRetturAfMatsedli;//Veitingar hlutur sem síðast var ýtt á af matseðli (til að bæta í körfu)
 
     //TODO initializa annars staðar
-    private IntegerProperty indexRettsUrKorfu = new SimpleIntegerProperty();//index hlutar sem smellt er á í körfu (til að fjarlægja)
+    private IntegerProperty indexRetturUrKorfu = new SimpleIntegerProperty();//index hlutar sem smellt er á í körfu (til að fjarlægja)
     @FXML
-    private Label heildarverd;//heildarverð label
+    private Label fxHeildarverd;//heildarverð label
     @FXML
-    private ListView<Veitingar> karfaListView; //ListView viðmótshlutur fyrir innihald körfunnar
+    private ListView<Veitingar> fxKarfa; //ListView viðmótshlutur fyrir innihald körfunnar
     private Karfa karfa;//Karfa hlutur, inniheldur matsedill hlut
-    private Vidskiptavinur vidskiptavinur; //viðskiptavinurinn í kerfinu, null eða með gildi
+    private Vidskiptavinur innskradurVidskiptavinur; //viðskiptavinurinn í kerfinu, null eða með gildi
 
     @FXML
-    private MatsedillView matsedillView;//matsedillView hluturinn, viðmótslhutur sem inniheldur ListView
+    private MatsedillView fxMatsedill;//MatsedillView hluturinn, viðmótshlutur sem inniheldur ListView
 
     @FXML
-    private ImageView avatar;//mynd fyrir innskráðan notanda
+    private ImageView fxNotandamynd;//mynd fyrir innskráðan notanda
     @FXML
-    private Label notandi;//nafn notanda
+    private Label fxNotandanafn;//nafn notanda
 
     @FXML
-    private Button innskraning; //hnappur fyrir innskráningu
+    private Button fxInnskraningHnappur; //hnappur fyrir innskráningu
 
     @FXML
-    private Button greidaHnappur; //greiðsluhnappur, stendur ganga frá pöntun á honum
+    private Button fxGreidaHnappur; //greiðsluhnappur, stendur ganga frá pöntun á honum
 
     //smiður fyrir pontunController
     public void initialize() {
         //todo setja þessar þrjár línur í sér aðferð, t.d. upphafsstillaSenu
         karfa = new Karfa();
-        vidskiptavinur = null;
-        greidaHnappur.setDisable(true);
+        innskradurVidskiptavinur = null;
+        fxGreidaHnappur.setDisable(true);
 
         heildarverdBinder();
 
         karfa.veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
-            karfaListView.setItems(karfa.veitingarList());
+            fxKarfa.setItems(karfa.veitingarList());
         });
 
         nyjastAfMatsedliListener();
@@ -70,10 +70,10 @@ public class PontunController {
     @FXML
     private void fxTakaUrKorfuHandler(MouseEvent event) {
 
-        int index = karfaListView.getSelectionModel().getSelectedIndex();
+        int index = fxKarfa.getSelectionModel().getSelectedIndex();
         if (index != -1) {
-            indexRettsUrKorfu.set(index);
-            karfa.takaAfMatsedli(indexRettsUrKorfu.intValue());
+            indexRetturUrKorfu.set(index);
+            karfa.takaAfMatsedli(indexRetturUrKorfu.intValue());
         }
 
     }
@@ -83,9 +83,9 @@ public class PontunController {
      * Setur í körfu það sem smellt er á af matseðli, leitar að selected hlut
      */
     private void nyjastAfMatsedliListener() { //todo endurnefna sidastValidAfMatsedliListener, eða validAfMatsedliListener?
-        matsedillView.getMatsedillListi().getSelectionModel().selectedItemProperty().addListener((observable, oldvalue, newValue) -> {
-            valinnRetturAfMatsedli = matsedillView.getMatsedillListi().getSelectionModel().getSelectedItem();
-            System.out.println(valinnRetturAfMatsedli);
+        fxMatsedill.getFxMatsedill().getSelectionModel().selectedItemProperty().addListener((observable, oldvalue, newValue) -> {
+            valinnRetturAfMatsedli = fxMatsedill.getFxMatsedill().getSelectionModel().getSelectedItem();
+            //System.out.println(valinnRetturAfMatsedli); //einföld prentsetning
             fxSetjaIKorfuHandler();
         });
     }
@@ -93,7 +93,7 @@ public class PontunController {
 
     //bindur saman heildarverð í viðmóti og vinnslu
     private void heildarverdBinder() {
-        heildarverd.textProperty().bind(karfa.getHeildarverd().asString());
+        fxHeildarverd.textProperty().bind(karfa.getHeildarverd().asString());
     }
 
 
@@ -101,6 +101,7 @@ public class PontunController {
      * Þegar ýtt er á hlut á matseðli er hann sendur hingað og settur í körfu
      */
     private void fxSetjaIKorfuHandler() {
+        //todo endurnefna, held að samkvæmt skilgreiningu sé þetta ekki handler. kallað á einu sinni, úr listener
         karfa.baetaVidMatsedil(valinnRetturAfMatsedli);
     }
 
@@ -113,11 +114,11 @@ public class PontunController {
      */
     @FXML
     private void fxInnskraningHandler(ActionEvent actionEvent) {
-        if (vidskiptavinur == null) {
+        if (innskradurVidskiptavinur == null) {
             Dialog<Vidskiptavinur> vidskiptiDialog = new VidskiptavinurDialog();
             Optional<Vidskiptavinur> result = vidskiptiDialog.showAndWait();
             if (result.isPresent()) {
-                vidskiptavinur = result.get();
+                innskradurVidskiptavinur = result.get();
                 setjaInnskradUtlit();
             }
 
@@ -129,16 +130,16 @@ public class PontunController {
 
     //það er innskráður notandi
     public void setInnskradur(boolean b) {
-        greidaHnappur.setDisable(false);
+        fxGreidaHnappur.setDisable(false);
         //TODO breyta þessu, kannski hafa ekkert viðfang?
     }
 
 
     //útlit sett á þegar einhver viðskiptavinur er í kerfinu, og innskráður
     private void setjaInnskradUtlit() {
-        avatar.getStyleClass().add("innskrad");
-        notandi.setText(vidskiptavinur.getNafn().getValue());
-        innskraning.setText("Innskráning");
+        fxNotandamynd.getStyleClass().add("innskrad");
+        fxNotandanafn.setText(innskradurVidskiptavinur.getNafn().getValue());
+        fxInnskraningHnappur.setText("Innskráning");
     }
 
     public Karfa getKarfa() {
@@ -155,8 +156,8 @@ public class PontunController {
         ViewSwitcher.switchTo(View.GREIDSLA);
     }
 
-    public Vidskiptavinur getVidskiptavinur() {
-        return vidskiptavinur;
+    public Vidskiptavinur getInnskradurVidskiptavinur() {
+        return innskradurVidskiptavinur;
     }
 
 }

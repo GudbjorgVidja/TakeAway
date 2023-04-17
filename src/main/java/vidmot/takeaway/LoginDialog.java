@@ -16,18 +16,18 @@ public class LoginDialog {
      * Smiður fyrir klasann, allt gert í smiðnum.
      */
     public LoginDialog() {
-        TextInputDialog d = new TextInputDialog();
+        TextInputDialog loginDialog = new TextInputDialog();
         PontunController pontunController = (PontunController) ViewSwitcher.lookup(View.PONTUN);
-        String nafn = pontunController.getVidskiptavinur().getNafn().get();
+        String nafn = pontunController.getInnskradurVidskiptavinur().getNafn().get();
 
-        Node iLagi = d.getDialogPane().lookupButton(ButtonType.OK);
-        iLagi.disableProperty().bind(d.getEditor().textProperty().isEmpty());
-        d.setTitle("innskráning");
-        d.setHeaderText("Viltu skrá þig inn sem " + nafn + "?");
-        d.setContentText("Lykilorð: ");
-        Optional<String> utkoma = d.showAndWait();
+        Node iLagi = loginDialog.getDialogPane().lookupButton(ButtonType.OK);
+        iLagi.disableProperty().bind(loginDialog.getEditor().textProperty().isEmpty());
+        loginDialog.setTitle("innskráning");
+        loginDialog.setHeaderText("Viltu skrá þig inn sem " + nafn + "?");
+        loginDialog.setContentText("Lykilorð: ");
+        Optional<String> utkoma = loginDialog.showAndWait();
 
         if (utkoma.isPresent()) pontunController.setInnskradur(true);
     }
-    
+
 }

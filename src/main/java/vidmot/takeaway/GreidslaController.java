@@ -14,9 +14,9 @@ import vinnsla.takeaway.Veitingar;
 
 public class GreidslaController {
     @FXML
-    private Label greidsluUpplysingar;//texti með upplýsingum um pöntunina
+    private Label fxGreidsluUpplysingar;//texti með upplýsingum um pöntunina
     @FXML
-    private ListView<Veitingar> greidslaListView;//ListView viðmótshlutur, afrit af karfa listanum
+    private ListView<Veitingar> fxKarfaIPontun;//ListView viðmótshlutur, afrit af karfa listanum
 
     private PontunController pontunController;//okkar tilvik af pontunController
 
@@ -31,7 +31,7 @@ public class GreidslaController {
             geraGreidslutexta();
         });
 
-        greidslaListView.setItems(pontunController.getKarfa().veitingarList());
+        fxKarfaIPontun.setItems(pontunController.getKarfa().veitingarList());
     }
 
 
@@ -39,9 +39,9 @@ public class GreidslaController {
      * Aðferð sem smíðar texta sem birtist í greiðslusenunni. Sækir heimilisfang og heildarverð í pontunController, og
      * biðtíminn er úr annari aðferð í GreidslaController
      */
-    private void geraGreidslutexta() {//heildarverd.intValue()
-        greidsluUpplysingar.setText("Heildarverð fyrir pöntunina er " + pontunController.getKarfa().getHeildarverd().get() +
-                " kr.\n\nPöntun verður afhent við skráð heimilisfang: \n" + pontunController.getVidskiptavinur().getHeimilisfang().get() +
+    private void geraGreidslutexta() {
+        fxGreidsluUpplysingar.setText("Heildarverð fyrir pöntunina er " + pontunController.getKarfa().getHeildarverd().get() +
+                " kr.\n\nPöntun verður afhent við skráð heimilisfang: \n" + pontunController.getInnskradurVidskiptavinur().getHeimilisfang().get() +
                 "\n\nÁætlaður afhendingartími er eftir " + afhendingartimiToString());
     }
 
