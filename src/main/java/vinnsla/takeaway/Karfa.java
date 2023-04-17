@@ -7,12 +7,14 @@ package vinnsla.takeaway;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ListChangeListener;
-
+/**
+ * Represents the cart of food items.
+ */
 public class Karfa extends Matsedill {
-    private IntegerProperty heildarverd;//heildarverð fyrir alla hluti í körfu
+    private IntegerProperty heildarverd;//total price for all items in the cart
 
     /**
-     * Þegar ný karfa er gerð, þá er gerður nýr matseðill, sem inniheldur tóman observableList af veitingum.
+     * When a new cart is created, a new Matsedill object is also created, which contains an empty ObservableList of Veitingar.
      */
     public Karfa() {
         heildarverd = new SimpleIntegerProperty(0);
@@ -20,8 +22,8 @@ public class Karfa extends Matsedill {
     }
 
     /**
-     * settur listener á observableList hlutinn fyrir Karfa (listinn geymdur í Matsedill klasanum).
-     * Finnur hvað bættist við eða var fjarlægt, og notar þær upplýsingar til að uppfæra heildarverð
+     * Adds a listener to the ObservableList object for Karfa (the list is stored in the Matsedill class).
+     * Finds out what was added or removed, and uses that information to update the total price.
      */
     private void heildarverdListenerRegla() {
         veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
@@ -32,40 +34,18 @@ public class Karfa extends Matsedill {
                     heild += v.getVerd().get();
                 }
                 heildarverd.set(heildarverd.get() + heild);
-                //heildarverd.setValue(heildarverd.getValue() + change.getAddedSubList().get(0).getVerd().getValue());
             } else if (change.wasRemoved()) {
                 int heild = 0;
                 for (Veitingar v : change.getRemoved()) {
                     heild += v.getVerd().get();
                 }
                 heildarverd.set(heildarverd.get() - heild);
-                //heildarverd.setValue(heildarverd.getValue() - change.getRemoved().get(0).getVerd().getValue());
             }
         });
     }
 
-
-    //aðalviðbót Karfa við Matsedill
+    //The main addition of Karfa to Matsedill
     public IntegerProperty getHeildarverd() {
         return heildarverd;
-    }
-
-
-    /**
-     * main fallið var notað til að gera prófanir
-     */
-    public static void main(String[] args) {
-        System.out.println("Geri matseðil og set gögn: ");
-        Matsedill matsedillinn = new Matsedill();
-        matsedillinn.setjaGogn("safi", 400);
-        matsedillinn.setjaGogn("steik", 6000);
-        matsedillinn.setjaGogn("banani", 20);
-
-        System.out.println("\nFjöldi hluta á matseðli: " + matsedillinn.veitingarList().size());
-
-        for (int i = 0; i < matsedillinn.veitingarList().size(); i++) {
-            System.out.println(matsedillinn.veitingarList().get(i));
-        }
-
     }
 }

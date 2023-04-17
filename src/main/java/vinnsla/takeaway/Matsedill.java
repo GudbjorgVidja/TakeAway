@@ -7,51 +7,54 @@ package vinnsla.takeaway;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * Represents a menu of food items.
+ */
 public class Matsedill {
-    private ObservableList<Veitingar> veitingar;
+    private ObservableList<Veitingar> veitingar; // The list of food items in the menu
 
     /**
-     * Smiður fyrir Matsedill klasann. Þegar nýr hlutur af klasanum Matsedill er gerður, þá er líka gerður veitingar
-     * hlutur, sem er tilviksbreytan fyrir ObservableList
+     * Creates a new menu with an empty list of food items.
+     * The list is implemented as an ObservableList for ease of use with JavaFX.
      */
     public Matsedill() {
         veitingar = FXCollections.observableArrayList();
     }
 
-
     /**
-     * Gerir nýjan Veitingar hlut sem er matur og kostar verd, og bætir þessum Veitingar hlut á veitingar, sem
-     * er ObservableList hlutur í Matsedill klasanum
-     *
-     * @param matur Strengur, rétturinn
-     * @param verd  heiltala, verðið
+     * Creates a new food item with the given name and price,
+     * and adds it to the menu.
+     * @param matur The name of the food item
+     * @param verd The price of the food item
      */
     public void setjaGogn(String matur, int verd) {
         veitingar.add(new Veitingar(matur, verd));
     }
 
-
     /**
-     * Bætir Veitingar hlut í körfuna
-     *
-     * @param v Veitingar hlutur sem valinn var af matseðli
+     * Adds a food item to the menu.
+     * @param v The food item to add to the menu
      */
     public void setjaMatsedil(Veitingar v) {
         veitingar.add(v);
     }
 
     /**
-     * aðferð til að fjarlægja stak af matseðli með því að breyta observableList. Tekur réttinn úr körfu
-     *
-     * @param index sæti á lista
+     * Removes a food item from the menu at the given index.
+     * If the index is out of bounds, no item is removed.
+     * @param index The index of the item to remove from the menu
      */
     public void takaAfMatsedli(int index) {
-        if (!veitingar.isEmpty()) veitingar.remove(index);
+        if (!veitingar.isEmpty() && index >= 0 && index < veitingar.size()) {
+            veitingar.remove(index);
+        }
     }
 
-    //skilar observable listanum fyrir tiltekinn Matseðill hlut
+    /**
+     * Returns the list of food items in the menu.
+     * @return The list of food items in the menu
+     */
     public ObservableList<Veitingar> veitingarList() {
         return veitingar;
     }
-
 }
