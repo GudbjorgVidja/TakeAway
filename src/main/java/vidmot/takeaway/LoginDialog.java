@@ -13,21 +13,35 @@ import java.util.Optional;
 
 public class LoginDialog {
     /**
-     * Smiður fyrir klasann, allt gert í smiðnum.
+     * Smiður fyrir klasann
      */
     public LoginDialog() {
-        TextInputDialog loginDialog = new TextInputDialog();
         PontunController pontunController = (PontunController) ViewSwitcher.lookup(View.PONTUN);
         String nafn = pontunController.getInnskradurVidskiptavinur().getNafn().get();
+
+        TextInputDialog loginDialog = geraDialog(nafn);
+
+        Optional<String> utkoma = loginDialog.showAndWait();
+
+        if (utkoma.isPresent()) pontunController.setInnskradur(true);
+    }
+
+    /**
+     * Aðferðin býr til dialog sem notaður er í smiðnum.
+     *
+     * @param nafn Strengur, nafn viðskiptavinar
+     * @return TextInputDialog með upplýsingum
+     */
+    private TextInputDialog geraDialog(String nafn) {
+        TextInputDialog loginDialog = new TextInputDialog();
 
         Node iLagi = loginDialog.getDialogPane().lookupButton(ButtonType.OK);
         iLagi.disableProperty().bind(loginDialog.getEditor().textProperty().isEmpty());
         loginDialog.setTitle("innskráning");
         loginDialog.setHeaderText("Viltu skrá þig inn sem " + nafn + "?");
         loginDialog.setContentText("Lykilorð: ");
-        Optional<String> utkoma = loginDialog.showAndWait();
 
-        if (utkoma.isPresent()) pontunController.setInnskradur(true);
+        return loginDialog;
     }
 
 }
