@@ -42,7 +42,7 @@ public class GreidslaController {
     private void geraGreidslutexta() {//heildarverd.intValue()
         greidsluUpplysingar.setText("Heildarverð fyrir pöntunina er " + pontunController.getKarfa().getHeildarverd().get() +
                 " kr.\n\nPöntun verður afhent við skráð heimilisfang: \n" + pontunController.getVidskiptavinur().getHeimilisfang().get() +
-                "\n\nÁætlaður afhendingartími er eftir " + afhendingartimi());
+                "\n\nÁætlaður afhendingartími er eftir " + afhendingartimiToString());
     }
 
 
@@ -51,12 +51,14 @@ public class GreidslaController {
      *
      * @return bid, áætlaður biðtími sem strengur
      */
-    private String afhendingartimi() {
+    private String afhendingartimiToString() {
         int heildarbid = (int) (Math.random() * 1440);
         String bid = "";
         int klst = heildarbid / 60;
         int min = heildarbid - 60 * klst;
 
+
+        //todo gera sér aðferð? (extract method)
         if (klst > 0) bid = klst + " klst";
         if (min != 0) bid += " og " + min + " mín";
         return bid;
@@ -69,8 +71,8 @@ public class GreidslaController {
      * @param actionEvent ýtt á staðfesta hnapp
      */
     @FXML
-    private void fxStadfestingHandler(ActionEvent actionEvent) {
-        stadfestingAlertDialog();
+    private void fxStadfestingHandler(ActionEvent actionEvent) { //todo eyða parameter?
+        birtaStadfestingAlertDialog();
 
         pontunController.getKarfa().veitingarList().clear();
         pontunController.getKarfa().getHeildarverd().set(0);
@@ -81,7 +83,7 @@ public class GreidslaController {
     /**
      * aðferð sem gerir Alert dialog sem lætur vita að pöntun hafi verið móttekin
      */
-    private void stadfestingAlertDialog() {
+    private void birtaStadfestingAlertDialog() {
         String spurning = "";
         ButtonType iLagi = new ButtonType("Í lagi", ButtonBar.ButtonData.OK_DONE);
         ButtonType haettaVid = new ButtonType("Hætta við", ButtonBar.ButtonData.CANCEL_CLOSE);
@@ -95,10 +97,10 @@ public class GreidslaController {
      * ýtt á til baka hnapp í greiðslusenunni.
      * Fer til baka í PontunController, karfan er eins og hún var
      *
-     * @param actionEvent ýtt á hnapp
+     * @param actionEvent ýtt á til baka hnapp
      */
     @FXML
-    private void fxTilBakaHandler(ActionEvent actionEvent) {
+    private void fxTilBakaHandler(ActionEvent actionEvent) { //todo eyða parameter?
         ViewSwitcher.switchTo(View.PONTUN);
     }
 }
