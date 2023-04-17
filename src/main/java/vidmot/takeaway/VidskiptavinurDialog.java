@@ -26,8 +26,8 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
     /**
      * Smiðurinn tekur inn Vidskiptavinur hlut sem er null, og setur í tilviksbreytuna vinur.
      */
-    public VidskiptavinurDialog(Vidskiptavinur vidskiptavinur) {
-        vinur = vidskiptavinur;
+    public VidskiptavinurDialog() {
+        vinur = new Vidskiptavinur(null, null);
 
         setDialogPane(lesaVidskiptavinurDialog());
         getDialogPane().setHeaderText("Stofnaðu aðgang til að halda áfram\nVinsamlegast sláðu inn nafn og heimilisfang");
@@ -94,5 +94,5 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
         }
 
     }
-    
+
 }

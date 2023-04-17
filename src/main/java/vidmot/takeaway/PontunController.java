@@ -114,7 +114,7 @@ public class PontunController {
     @FXML
     private void fxInnskraningHandler(ActionEvent actionEvent) {
         if (vidskiptavinur == null) {
-            Dialog<Vidskiptavinur> vidskiptiDialog = new VidskiptavinurDialog(new Vidskiptavinur(null, null));
+            Dialog<Vidskiptavinur> vidskiptiDialog = new VidskiptavinurDialog();
             Optional<Vidskiptavinur> result = vidskiptiDialog.showAndWait();
             if (result.isPresent()) {
                 vidskiptavinur = result.get();
