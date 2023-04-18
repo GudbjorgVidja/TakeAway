@@ -21,14 +21,13 @@ improved.
 - Refactor kóða
     - extract method: setja hluta kóðans í sér aðferðir, t.d. færa prentsetningar eða annað sem er sérstaklega commentað
       á í aðferð
-    -
     - passa að breyta ekki eða bæta við virkni á sama tíma og verið er að refactora
-    -
     - Laga breytu- og aðferðaheiti
-    -
 - Packaged jar file and command
 - Documentation
     - README, license, nákvæmari documentation (markdown) með t.d. UML og leiðbeiningum fyrir notanda.
+
+allar tilviksbreytur fyrir viðmótshluti byrja á fx, t.d. væri innskráning hnappur fxInnskraning.
 
 ## Nánari leiðbeiningar
 
