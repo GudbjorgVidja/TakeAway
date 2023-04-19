@@ -11,7 +11,7 @@ import javafx.collections.ListChangeListener;
  * Klasi fyrir upplýsingar um körfuna.
  */
 public class Karfa extends Matsedill {
-    private IntegerProperty heildarverd;//total price for all items in the cart
+    private final IntegerProperty heildarverd;//total price for all items in the cart
 
     /**
      * Þegar ný karfa er búin til, er líka Matsedill hlutur búinn til, sem hefur tóman ObservableList af Veitingar.

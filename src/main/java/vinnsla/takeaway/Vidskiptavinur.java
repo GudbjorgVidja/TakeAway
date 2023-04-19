@@ -14,8 +14,8 @@ import javafx.beans.property.StringProperty;
  * Klasi fyrir upplýsingar viðskiptavinar.
  */
 public class Vidskiptavinur {
-    private StringProperty nafn; // The customer's name
-    private StringProperty heimilisfang;// The customer's address
+    private final StringProperty nafn; // The customer's name
+    private final StringProperty heimilisfang;// The customer's address
 
     /**
      * Býr til nýjan viðskiptaivn með nafni og hemilisfangi.

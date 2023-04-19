@@ -21,7 +21,7 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
     @FXML
     private ButtonType fxILagi;//Buttontype hlutur, í lagi takkinn
 
-    private Vidskiptavinur vidskiptavinur;//tilviksbreyta, skráningu nýs viðskiptavinar verður bætt inn í vidskiptavinur
+    private final Vidskiptavinur vidskiptavinur;//tilviksbreyta, skráningu nýs viðskiptavinar verður bætt inn í vidskiptavinur
 
     /**
      * Smiðurinn tekur inn Vidskiptavinur hlut sem er null, og setur í tilviksbreytuna vidskiptavinur.

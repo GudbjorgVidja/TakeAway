@@ -11,7 +11,7 @@ import javafx.collections.ObservableList;
  * Klasi fyrir upplýsingar um matseðilinn.
  */
 public class Matsedill {
-    private ObservableList<Veitingar> veitingarListi; // The list of food items in the menu
+    private final ObservableList<Veitingar> veitingarListi; // The list of food items in the menu
 
     /**
      * Býr til nýjann matseðil með tóman lista af réttum.

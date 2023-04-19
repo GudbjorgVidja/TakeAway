@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class MatsedillView extends BorderPane {
 
-    private Matsedill matsedill; //vinnsluhluturinn
+    private final Matsedill matsedill; //vinnsluhluturinn
 
     @FXML
     private ListView<Veitingar> fxMatsedill;//viðmótshluturinn fyrir matseðilinn
