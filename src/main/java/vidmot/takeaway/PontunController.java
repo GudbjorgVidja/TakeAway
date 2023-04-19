@@ -126,7 +126,6 @@ public class PontunController {
             }
 
         } else {
-            //new LoginDialog(); //annar klasi var notaður
             geraLoginDialog(); //virkar líka að hafa bara stutta aðferð
         }
 
@@ -154,7 +153,7 @@ public class PontunController {
         //allavega laga þetta
     }
 
-    
+
     /**
      * breytir útliti þegar viðskiptavinur er innskráður
      */
