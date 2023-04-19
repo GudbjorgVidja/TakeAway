@@ -25,7 +25,7 @@ public class PontunController {
     private Veitingar valinnRetturAfMatsedli;//Veitingar hlutur sem síðast var ýtt á af matseðli (til að bæta í körfu)
 
     //TODO initializa annars staðar
-    private IntegerProperty indexRetturUrKorfu = new SimpleIntegerProperty();//index hlutar sem smellt er á í körfu (til að fjarlægja)
+    private IntegerProperty indexRetturUrKorfu;// = new SimpleIntegerProperty();//index hlutar sem smellt er á í körfu (til að fjarlægja)
     @FXML
     private Label fxHeildarverd;//heildarverð label
     @FXML
@@ -49,10 +49,7 @@ public class PontunController {
 
     //smiður fyrir pontunController
     public void initialize() {
-        //todo setja þessar þrjár línur í sér aðferð, t.d. upphafsstillaSenu
-        karfa = new Karfa();
-        innskradurVidskiptavinur = null;
-        fxGreidaHnappur.setDisable(true);
+        upphafsstillaTilviksbreytur();
 
         heildarverdBinder();
 
@@ -62,6 +59,16 @@ public class PontunController {
         });
 
         nyjastAfMatsedliListener();
+    }
+
+    /**
+     * Tilviksbreytur upphafsstilltar í upphafi keyrslu
+     */
+    private void upphafsstillaTilviksbreytur() {
+        karfa = new Karfa();
+        innskradurVidskiptavinur = null;
+        indexRetturUrKorfu = new SimpleIntegerProperty();
+        fxGreidaHnappur.setDisable(true); //todo upphafsstilla hnappinn sem disabled
     }
 
 
@@ -132,6 +139,7 @@ public class PontunController {
     public void setInnskradur(boolean b) {
         fxGreidaHnappur.setDisable(false);
         //TODO breyta þessu, kannski hafa ekkert viðfang?
+        //allavega laga þetta
     }
 
 

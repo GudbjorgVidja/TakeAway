@@ -87,10 +87,10 @@ public class GreidslaController {
         String spurning = "";
         ButtonType iLagi = new ButtonType("Í lagi", ButtonBar.ButtonData.OK_DONE);
         ButtonType haettaVid = new ButtonType("Hætta við", ButtonBar.ButtonData.CANCEL_CLOSE);
-        Alert a = new Alert(Alert.AlertType.NONE, spurning, iLagi, haettaVid);
-        a.setTitle("Staðfesting");
-        a.setContentText("Pöntunin hefur verið móttekin");
-        a.showAndWait();
+        Alert alert = new Alert(Alert.AlertType.NONE, spurning, iLagi, haettaVid);
+        alert.setTitle("Staðfesting");
+        alert.setContentText("Pöntunin hefur verið móttekin");
+        alert.showAndWait();
     }
 
     /**

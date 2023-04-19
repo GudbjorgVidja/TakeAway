@@ -11,6 +11,7 @@ import javafx.scene.control.TextInputDialog;
 
 import java.util.Optional;
 
+//todo viljum kannski frekar að LoginDialog extends TextInputDialog
 public class LoginDialog {
     /**
      * Smiður fyrir klasann
