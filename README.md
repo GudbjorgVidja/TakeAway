@@ -14,6 +14,10 @@ This project supports the Maven goals compile, test, exec:java, and the goals pa
     - in Karfa: a listener observing the contents of Karfa, to calculate the total price of the order.
     - in PontunController: a listener on the last selected item from a listView of the menu, to add that item to Karfa.
 
+## Documentation
+
+[Documentation](src/site/markdown/documentation.md)
+
 ## To do
 
 - Git
