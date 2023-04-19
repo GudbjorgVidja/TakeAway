@@ -3,6 +3,17 @@
 The last assignment, using the program TakeAway, an assignment from HBV201G. The project will have been refactored and
 improved.
 
+## Maven
+
+This project supports the Maven goals compile, test, exec:java, and the goals package and site will be added.
+
+## Design patterns
+
+- The Observer pattern is used, by implementing listeners.
+    - A listener in GreidslaController, observing changes to the contents of Karfa.
+    - in Karfa: a listener observing the contents of Karfa, to calculate the total price of the order.
+    - in PontunController: a listener on the last selected item from a listView of the menu, to add that item to Karfa.
+
 ## To do
 
 - Git
@@ -22,7 +33,6 @@ improved.
     - extract method: setja hluta kóðans í sér aðferðir, t.d. færa prentsetningar eða annað sem er sérstaklega commentað
       á í aðferð
     - passa að breyta ekki eða bæta við virkni á sama tíma og verið er að refactora
-    - Laga breytu- og aðferðaheiti
 - Packaged jar file and command
 - Documentation
     - README, license, nákvæmari documentation (markdown) með t.d. UML og leiðbeiningum fyrir notanda.
