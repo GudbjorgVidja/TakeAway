@@ -44,6 +44,7 @@ The license used was an [MIT License](LICENSE).
 - Packaged jar file and command
 - Documentation
     - README, license, nákvæmari documentation (markdown) með t.d. UML og leiðbeiningum fyrir notanda.
+- Hreinsa upp pom skrána, taka út óþarfa kóða
 
 allar tilviksbreytur fyrir viðmótshluti byrja á fx, t.d. væri innskráning hnappur fxInnskraning.
 
