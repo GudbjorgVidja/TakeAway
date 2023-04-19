@@ -12,7 +12,8 @@ This project supports the Maven goals compile, test, exec:java, package and site
 ## Design patterns
 
 - The Observer pattern is used, by implementing listeners.
-    - A listener in GreidslaController, observing changes to the contents of Karfa.
+    - A listener in GreidslaController. The observer is veitingarList in Karfa, and the observed is a method to make a
+      new text
     - in Karfa: a listener observing the contents of Karfa, to calculate the total price of the order.
     - in PontunController: a listener on the last selected item from a listView of the menu, to add that item to Karfa.
 
@@ -26,7 +27,11 @@ The license used was an [MIT License](LICENSE).
 
 ## End-user documentation
 
-Some instructions for the end user, e.g. how to run the jar
+Instructions to run the program:
+
+- Open the terminal
+- type "source runjar.cmd"
+- press enter
 
 ## To do
 
