@@ -8,13 +8,13 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ListChangeListener;
 /**
- * Represents the cart of food items.
+ * Klasi fyrir upplýsingar um körfuna.
  */
 public class Karfa extends Matsedill {
     private IntegerProperty heildarverd;//total price for all items in the cart
 
     /**
-     * When a new cart is created, a new Matsedill object is also created, which contains an empty ObservableList of Veitingar.
+     * Þegar ný karfa er búin til, er líka Matsedill hlutur búinn til, sem hefur tóman ObservableList af Veitingar.
      */
     public Karfa() {
         heildarverd = new SimpleIntegerProperty(0);
@@ -22,8 +22,8 @@ public class Karfa extends Matsedill {
     }
 
     /**
-     * Adds a listener to the ObservableList object for Karfa (the list is stored in the Matsedill class).
-     * Finds out what was added or removed, and uses that information to update the total price.
+     * Bætir við listener í ObservableList hlutinn fyrir Karfa (listinn er geymdur í Matsedill).
+     * Finnur hverju var bætt við og hvað var fjarlægt, og notar þær upplýsingar til að uppfæra heildarverðið.
      */
     private void heildarverdListenerRegla() {
         veitingarList().addListener((ListChangeListener<Veitingar>) change -> {

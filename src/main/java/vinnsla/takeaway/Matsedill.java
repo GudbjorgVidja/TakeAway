@@ -8,34 +8,33 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * Represents a menu of food items.
+ * Klasi fyrir upplýsingar um matseðilinn.
  */
 public class Matsedill {
     private ObservableList<Veitingar> veitingarListi; // The list of food items in the menu
 
     /**
-     * Creates a new menu with an empty list of food items.
-     * The list is implemented as an ObservableList for ease of use with JavaFX.
+     * Býr til nýjann matseðil með tóman lista af réttum.
+     * Listinn er á formi ObservableList til að auðvelda notkun með JavaFX.
      */
     public Matsedill() {
         veitingarListi = FXCollections.observableArrayList();
     }
 
     /**
-     * Creates a new food item with the given name and price,
-     * and adds it to the menu.
+     * Býr til nýjann matar hlut (rétt) með nafni og verði, og bætir honum við matseðilinn.
      *
-     * @param matur The name of the food item
-     * @param verd  The price of the food item
+     * @param matur Nafn réttisins
+     * @param verd  Verð réttisins
      */
     public void setjaGogn(String matur, int verd) {
         veitingarListi.add(new Veitingar(matur, verd));
     }
 
     /**
-     * Adds a food item to the menu.
+     * Bætir við rétt á matseðil.
      *
-     * @param veitingar The food item to add to the menu
+     * @param veitingar Réttur sem á að bæta við.
      */
     public void baetaVidMatsedil(Veitingar veitingar) {
         veitingarListi.add(veitingar);
@@ -45,10 +44,10 @@ public class Matsedill {
 
 
     /**
-     * Removes a food item from the menu at the given index.
-     * If the index is out of bounds, no item is removed.
+     * Fjarlægir réttinn af matseðli á gefnu index.
+     * Ef index er "out of bounds" þá er ekkert fjarlægt.
      *
-     * @param index The index of the item to remove from the menu
+     * @param index Index réttisins sem á að fjarlæga.
      */
     public void takaAfMatsedli(int index) {
         if (!veitingarListi.isEmpty() && index >= 0 && index < veitingarListi.size()) {
@@ -57,9 +56,9 @@ public class Matsedill {
     }
 
     /**
-     * Returns the list of food items in the menu.
+     * Skilar lista af réttunum á matseðlinum.
      *
-     * @return The list of food items in the menu
+     * @return Listi rétta á matseðli.
      */
     public ObservableList<Veitingar> veitingarList() {
         return veitingarListi;
