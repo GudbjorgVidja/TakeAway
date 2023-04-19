@@ -132,14 +132,16 @@ public class PontunController {
 
     }
 
+    /**
+     * Aðferðin gerir dialog fyrir viðskiptavin til að logga sig inn. Þetta var áður í klasanum LoginDialog.java
+     */
     private void geraLoginDialog() {
         TextInputDialog loginDialog = new TextInputDialog();
         (loginDialog.getDialogPane().lookupButton(ButtonType.OK)).disableProperty().bind(loginDialog.getEditor().textProperty().isEmpty());
-        
+
         loginDialog.setTitle("innskráning");
         loginDialog.setHeaderText("Viltu skrá þig inn sem " + innskradurVidskiptavinur.getNafn().get() + "?");
         loginDialog.setContentText("Lykilorð: ");
-
 
         Optional<String> utkoma = loginDialog.showAndWait();
         if (utkoma.isPresent()) setInnskradur(true);
@@ -152,8 +154,10 @@ public class PontunController {
         //allavega laga þetta
     }
 
-
-    //útlit sett á þegar einhver viðskiptavinur er í kerfinu, og innskráður
+    
+    /**
+     * breytir útliti þegar viðskiptavinur er innskráður
+     */
     private void setjaInnskradUtlit() {
         fxNotandamynd.getStyleClass().add("innskrad");
         fxNotandanafn.setText(innskradurVidskiptavinur.getNafn().getValue());
