@@ -5,7 +5,7 @@ improved.
 
 ## Maven
 
-This project supports the Maven goals compile, test, exec:java, and the goals package and site will be added.
+This project supports the Maven goals compile, test, exec:java, package and site.
 
 ## Design patterns
 
@@ -26,7 +26,7 @@ The license used was an [MIT License](LICENSE).
 
 - Git
     - nota bara git, báðar að committa
-- Maven
+- Maven (staðfesta að þetta sé komið)
     - nota Maven project layout (kafli/verkefni 4)
     - support goals: compile, test, exec:java, package, site
 - Junit test fyrir bakendann
