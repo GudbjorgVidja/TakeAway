@@ -3,6 +3,8 @@
 The last assignment, using the program TakeAway, an assignment from HBV201G. The project will have been refactored and
 improved.
 
+In this program a user can pick menu items from a list and order them.
+
 ## Maven
 
 This project supports the Maven goals compile, test, exec:java, package and site.
@@ -21,6 +23,10 @@ This project supports the Maven goals compile, test, exec:java, package and site
 ## Licenses
 
 The license used was an [MIT License](LICENSE).
+
+## End-user documentation
+
+Some instructions for the end user, e.g. how to run the jar
 
 ## To do
 
