@@ -9,10 +9,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import vinnsla.takeaway.Karfa;
@@ -68,7 +65,6 @@ public class PontunController {
         karfa = new Karfa();
         innskradurVidskiptavinur = null;
         indexRetturUrKorfu = new SimpleIntegerProperty();
-        fxGreidaHnappur.setDisable(true); //todo upphafsstilla hnappinn sem disabled
     }
 
 
@@ -122,17 +118,31 @@ public class PontunController {
     @FXML
     private void fxInnskraningHandler(ActionEvent actionEvent) {
         if (innskradurVidskiptavinur == null) {
-            Dialog<Vidskiptavinur> vidskiptiDialog = new VidskiptavinurDialog();
-            Optional<Vidskiptavinur> result = vidskiptiDialog.showAndWait();
+            Optional<Vidskiptavinur> result = (new VidskiptavinurDialog()).showAndWait();
+
             if (result.isPresent()) {
                 innskradurVidskiptavinur = result.get();
                 setjaInnskradUtlit();
             }
 
         } else {
-            new LoginDialog();
+            //new LoginDialog(); //annar klasi var notaður
+            geraLoginDialog(); //virkar líka að hafa bara stutta aðferð
         }
 
+    }
+
+    private void geraLoginDialog() {
+        TextInputDialog loginDialog = new TextInputDialog();
+        (loginDialog.getDialogPane().lookupButton(ButtonType.OK)).disableProperty().bind(loginDialog.getEditor().textProperty().isEmpty());
+        
+        loginDialog.setTitle("innskráning");
+        loginDialog.setHeaderText("Viltu skrá þig inn sem " + innskradurVidskiptavinur.getNafn().get() + "?");
+        loginDialog.setContentText("Lykilorð: ");
+
+
+        Optional<String> utkoma = loginDialog.showAndWait();
+        if (utkoma.isPresent()) setInnskradur(true);
     }
 
     //það er innskráður notandi

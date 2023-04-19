@@ -1,3 +1,4 @@
+//todo henda þessum klasa út og nota frekar bara aðferð í PontunController
 /**
  * Klasinn LoginDialog gerir TextDialog hlut ef notandi er nú þegar í kerfinu. Notandi þarf að slá inn lykilorð og getur
  * svo ýtt á hnappinn "í lagi" til að senda inn svarið. Lykilorðið er ekki geymt eða staðfest, en ekki hægt að ýta
@@ -16,14 +17,13 @@ public class LoginDialog {
     /**
      * Smiður fyrir klasann
      */
-    public LoginDialog() {
-        PontunController pontunController = (PontunController) ViewSwitcher.lookup(View.PONTUN);
-        String nafn = pontunController.getInnskradurVidskiptavinur().getNafn().get();
+    public LoginDialog() {//todo sjá hvað væri í þessu ef þetta væri bara í PontunController
+        PontunController pontunController = (PontunController) ViewSwitcher.lookup(View.PONTUN);//væri ekki
+        String nafn = pontunController.getInnskradurVidskiptavinur().getNafn().get(); //væri ekki
 
         TextInputDialog loginDialog = geraDialog(nafn);
 
         Optional<String> utkoma = loginDialog.showAndWait();
-
         if (utkoma.isPresent()) pontunController.setInnskradur(true);
     }
 
