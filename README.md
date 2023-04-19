@@ -18,6 +18,10 @@ This project supports the Maven goals compile, test, exec:java, and the goals pa
 
 [Documentation](src/site/markdown/documentation.md)
 
+## Licenses
+
+The license used was an [MIT License](LICENSE).
+
 ## To do
 
 - Git
