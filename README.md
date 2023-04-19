@@ -33,6 +33,8 @@ Instructions to run the program:
 - type "source runjar.cmd"
 - press enter
 
+First the user might need to clean and package. (virkar ekki hjá mér nema bara í maven flipanum)
+
 ## To do
 
 - Git
