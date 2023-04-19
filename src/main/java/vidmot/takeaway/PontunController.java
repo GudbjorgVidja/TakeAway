@@ -56,6 +56,7 @@ public class PontunController {
 
         heildarverdBinder();
 
+        //todo nota frekar binding?
         karfa.veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
             fxKarfa.setItems(karfa.veitingarList());
         });
@@ -85,7 +86,6 @@ public class PontunController {
     private void nyjastAfMatsedliListener() { //todo endurnefna sidastValidAfMatsedliListener, eða validAfMatsedliListener?
         fxMatsedill.getFxMatsedill().getSelectionModel().selectedItemProperty().addListener((observable, oldvalue, newValue) -> {
             valinnRetturAfMatsedli = fxMatsedill.getFxMatsedill().getSelectionModel().getSelectedItem();
-            //System.out.println(valinnRetturAfMatsedli); //einföld prentsetning
             fxSetjaIKorfuHandler();
         });
     }
