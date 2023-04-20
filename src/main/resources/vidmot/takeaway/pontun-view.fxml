@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <?import vidmot.takeaway.MatsedillView?>
-<AnchorPane prefHeight="500.0" prefWidth="500.0" stylesheets="@PontunStyle.css" xmlns="http://javafx.com/javafx/19"
+<AnchorPane prefHeight="500.0" prefWidth="500.0" stylesheets="@pontun-style.css" xmlns="http://javafx.com/javafx/19"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.takeaway.PontunController">
     <children>
         <Button fx:id="fxGreidaHnappur" layoutX="301.0" layoutY="436.0" onAction="#fxGreidaHandler" disable="true"
