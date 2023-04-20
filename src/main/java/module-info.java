@@ -5,4 +5,5 @@ module vidmot.takeaway {
 
     opens vidmot.takeaway to javafx.fxml;
     exports vidmot.takeaway;
+    exports vinnsla.takeaway;
 }

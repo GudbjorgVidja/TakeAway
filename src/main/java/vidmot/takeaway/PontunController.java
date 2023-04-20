@@ -57,7 +57,6 @@ public class PontunController {
 
         nyjastAfMatsedliListener();
     }
-
     /**
      * Tilviksbreytur upphafsstilltar í upphafi keyrslu
      */
