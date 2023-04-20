@@ -1,1 +1,1 @@
-![](UMLDiagram.png)
+![](UML.png)
