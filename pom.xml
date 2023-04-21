@@ -157,20 +157,10 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <!--<mainClass>vidmot.takeaway.TakeAwayApplication</mainClass>-->
                             <mainClass>vidmot.takeaway.MyLauncher</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
-                <!--
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>vidmot.takeaway.TakeAwayApplication</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration> -->
-
 
                 <!-- executions bálkurinn segir til um hvenær þetta plugin á að vera framkvæmt-->
                 <executions>
