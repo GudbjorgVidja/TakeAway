@@ -12,8 +12,8 @@ import javafx.beans.property.StringProperty;
  * Klasi fyrir veitingarnar - nafn réttar og verð þeirra.
  */
 public class Veitingar {
-    private final StringProperty matur; // The name of the food item
-    private final IntegerProperty verd; // The price of the food item
+    private final StringProperty matur; // Nafn veitingar
+    private final IntegerProperty verd; // Verð veitingar
 
     /**
      * Býr til nýjan matur hlut með nafni og verði.
