@@ -19,7 +19,6 @@ This project supports the Maven goals compile, test, exec:java, package and site
 ## Design patterns
 
 The Observer pattern is used, by implementing listeners and bindings.
-An observable is the value that is being watched, while an observer changes with the observable
 
 - In `GreidslaController.java`:
     - A listener, the observable is veitingarList in Karfa, and the observer is a method to make a
@@ -40,7 +39,7 @@ An observable is the value that is being watched, while an observer changes with
 
 ## Documentation
 
-[Documentation](src/site/markdown/documentation.md)
+[Documentation](src/site/markdown/documentation.md) in the form of UML diagram
 
 ## Licenses
 
@@ -50,7 +49,11 @@ The license used was an [MIT License](LICENSE).
 
 Instructions to run the program:
 
-For Mac and Windows:
+For Mac and Linux (held ég):
+
+- run the file run.cmd through the terminal
+
+For Windows with bash or something:
 
 - use maven commands clean and package
 - Open the terminal
