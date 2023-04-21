@@ -147,6 +147,7 @@ public class PontunController {
      */
     private void setjaInnskradUtlit() {
         fxNotandamynd.getStyleClass().add("innskrad");
+        karfa.baetaVidMatsedil(valinnRetturAfMatsedli);
         fxNotandanafn.setText(innskradurVidskiptavinur.getNafn().getValue());
         fxInnskraningHnappur.setText("Innskráning");
     }
