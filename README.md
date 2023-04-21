@@ -15,17 +15,17 @@ The Observer pattern is used, by implementing listeners and bindings.
 An observable is the value that is being watched, while an observer changes with the observable
 
 - In GreidslaController:
-    - A listener, the observer is veitingarList in Karfa, and the observed is a method to make a
+    - A listener, the observer is veitingarList in Karfa, and the observable is a method to make a
       new text
 - in Karfa:
-    - a listener observing the contents of Karfa, to calculate the total price of the order.
+    - a listener, the observer is the total price of the order, and the observable is the contents of Karfa.
 - in PontunController:
-    - a listener on the last selected item from a listView of the menu, to add that item to Karfa.
-    - a binding the listView in Karfa with the observableList<Veitingar> from the backend
-    - a binding Heildarverd from the backend with the label
-    - two bidirectional bindings, binds contents from textfields bound with Vidskiptavinur values of name and address
+    - a listener, the observer is the Karfa, and the observable is the last selected item from a listView of the menu.
+    - a binding, the observer is the listView in Karfa and the observable is the observableList<Veitingar> from the backend.
+    - a binding,the observer is the label, and the observable is the Heildarverd.
+    - two bidirectional bindings, binds contents from textfields bound with Vidskiptavinur values of name and address (they are both observers and observables).
 - in VidskiptavinurDialog:
-    - ilagi takkin disableProperty bundið við textfields fyrir nafn og heimilisfang.
+    - a binding, the observer is the disableProperty for the ilagi button, the observable are the contents of the textfields nafn and heimilisfang.
 
 ## Documentation
 
