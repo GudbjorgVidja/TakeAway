@@ -1,9 +1,3 @@
-/**
- * Controller klasi fyrir greiðslusenuna. Hef gert greidsla-view.fxml fyrir viðmót greiðslusenunnar.
- * Með tilviksbreytunni pontunController höfum við aðgang að pöntunarsenunni, og þannig nálgast klasinn heildarverð,
- * hvað er í körfu, og upplýsingar um innskráðan viðskiptavin.
- */
-
 package vidmot.takeaway;
 
 import javafx.collections.ListChangeListener;
@@ -12,6 +6,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import vinnsla.takeaway.Veitingar;
 
+/**
+ * Controller klasi fyrir greiðslusenuna. Hef gert greidsla-view.fxml fyrir viðmót greiðslusenunnar.
+ * Með tilviksbreytunni pontunController höfum við aðgang að pöntunarsenunni, og þannig nálgast klasinn heildarverð,
+ * hvað er í körfu, og upplýsingar um innskráðan viðskiptavin.
+ */
 public class GreidslaController {
     @FXML
     private Label fxGreidsluUpplysingar;//texti með upplýsingum um pöntunina
@@ -64,6 +63,7 @@ public class GreidslaController {
         }
         return afhending;
     }
+
     /**
      * Býr til streng sem inniheldur afhendingartíma með því að kalla á aðferðina buaTilAfhendingartima með slembitölu
      * sem er fengin með að draga slembitölu á bilinu [0, 1440). Þessi aðferð skilar strengnum sem inniheldur
@@ -71,7 +71,7 @@ public class GreidslaController {
      *
      * @return strengur sem inniheldur afhendingartímann í lesanlegri formi
      */
-    private String afhendingartimiToString() {
+    private String afhendingartimiToString() { //todo held við ættum að sameina þetta og buaTilAfhendingartima, meikar ekki alveg sens
         int heildarbid = (int) (Math.random() * 1440);
         return buaTilAfhendingartima(heildarbid);
     }

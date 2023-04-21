@@ -69,13 +69,11 @@ public class PontunController {
      */
     @FXML
     private void fxTakaUrKorfuHandler(MouseEvent event) {
-
         int index = fxKarfa.getSelectionModel().getSelectedIndex();
         if (index != -1) {
             indexRetturUrKorfu.set(index);
             karfa.takaAfMatsedli(indexRetturUrKorfu.intValue());
         }
-
     }
 
 
@@ -90,7 +88,9 @@ public class PontunController {
     }
 
 
-    //bindur saman heildarverð í viðmóti og vinnslu
+    /**
+     * bindur saman heildarverð í viðmóti og vinnslu
+     */
     private void heildarverdBinder() {
         fxHeildarverd.textProperty().bind(karfa.getHeildarverd().asString());
     }
@@ -123,11 +123,10 @@ public class PontunController {
         } else {
             geraLoginDialog();
         }
-
     }
 
     /**
-     * Aðferðin gerir dialog fyrir viðskiptavin til að logga sig inn. Þetta var áður í klasanum LoginDialog.java
+     * Aðferðin gerir dialog fyrir viðskiptavin til að logga sig inn.
      */
     private void geraLoginDialog() {
         TextInputDialog loginDialog = new TextInputDialog();
@@ -147,7 +146,6 @@ public class PontunController {
      */
     private void setjaInnskradUtlit() {
         fxNotandamynd.getStyleClass().add("innskrad");
-        karfa.baetaVidMatsedil(valinnRetturAfMatsedli);
         fxNotandanafn.setText(innskradurVidskiptavinur.getNafn().getValue());
         fxInnskraningHnappur.setText("Innskráning");
     }
