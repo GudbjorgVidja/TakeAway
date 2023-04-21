@@ -4,9 +4,9 @@
  */
 package vidmot.takeaway;
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -50,13 +50,11 @@ public class PontunController {
 
         heildarverdBinder();
 
-        //todo nota frekar binding?
-        karfa.veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
-            fxKarfa.setItems(karfa.veitingarList());
-        });
+        Bindings.bindContent(fxKarfa.getItems(), karfa.veitingarList());
 
         validAfMatsedliListener();
     }
+
     /**
      * Tilviksbreytur upphafsstilltar í upphafi keyrslu
      */
