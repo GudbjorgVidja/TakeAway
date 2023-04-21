@@ -9,23 +9,34 @@ In this program a user can pick menu items from a list and order them.
 
 This project supports the Maven goals compile, test, exec:java, package and site.
 
+- `mvn compile` compiles all implementation classes.
+- `mvn exec:java` executes the main method of the implementation.
+- `mvn test` runs all test cases (i.e. all classes with a name that either starts with `Test` or ends with `Test`
+  , `Tests`, or `TestCase`).
+- `mvn package` makes a jar and a fat jar
+- `mvn site` generates a site for the project
+
 ## Design patterns
 
 The Observer pattern is used, by implementing listeners and bindings.
 An observable is the value that is being watched, while an observer changes with the observable
 
-- In GreidslaController:
+- In `GreidslaController.java`:
     - A listener, the observer is veitingarList in Karfa, and the observable is a method to make a
       new text
-- in Karfa:
+- in `Karfa.java`:
     - a listener, the observer is the total price of the order, and the observable is the contents of Karfa.
-- in PontunController:
+- in `PontunController.java`:
     - a listener, the observer is the Karfa, and the observable is the last selected item from a listView of the menu.
-    - a binding, the observer is the listView in Karfa and the observable is the observableList<Veitingar> from the backend.
+    - a binding, the observer is the listView in Karfa and the observable is the observableList<Veitingar> from the
+      backend.
     - a binding,the observer is the label, and the observable is the Heildarverd.
-    - two bidirectional bindings, binds contents from textfields bound with Vidskiptavinur values of name and address (they are both observers and observables).
-- in VidskiptavinurDialog:
-    - a binding, the observer is the disableProperty for the ilagi button, the observable are the contents of the textfields nafn and heimilisfang.
+    - two identical bidirectional bindings, one between a the text property of the name textfield and the name value in
+      Vidskiptavinur and the other binding is the same except for the home address. Since the bindings are
+      bidirectional, each property is both an observer and observable.
+- in `VidskiptavinurDialog.java`:
+    - a binding, the observer is the disableProperty for the ilagi button, the observable are the contents of the
+      textfields nafn and heimilisfang.
 
 ## Documentation
 
