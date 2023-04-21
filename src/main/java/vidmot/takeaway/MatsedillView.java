@@ -25,6 +25,17 @@ public class MatsedillView extends BorderPane {
 
     //Smiður sem les inn fxml skrá, og setur svo rót og controller sem this
     public MatsedillView() {
+        lesaFXML();
+        matsedill = new Matsedill();
+        lesaInnVeitingar();
+
+        fxMatsedill.setItems(matsedill.veitingarList());
+    }
+
+    /**
+     * aðferð til að lesa inn viðmót úr fxml fyrir sérhæfðan klasa
+     */
+    private void lesaFXML() {
         FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("matsedill-view.fxml"));
         fxmlloader.setRoot(this);
         fxmlloader.setController(this);
@@ -34,11 +45,6 @@ public class MatsedillView extends BorderPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
-        matsedill = new Matsedill();
-        lesaInnVeitingar();
-
-        fxMatsedill.setItems(matsedill.veitingarList());
     }
 
     //skilar ListView hlut fyrir matseðilinn
