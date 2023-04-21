@@ -55,9 +55,8 @@ public class PontunController {
             fxKarfa.setItems(karfa.veitingarList());
         });
 
-        nyjastAfMatsedliListener();
+        validAfMatsedliListener();
     }
-
     /**
      * Tilviksbreytur upphafsstilltar í upphafi keyrslu
      */
@@ -86,7 +85,7 @@ public class PontunController {
     /**
      * Setur í körfu það sem smellt er á af matseðli, leitar að selected hlut
      */
-    private void nyjastAfMatsedliListener() { //todo endurnefna sidastValidAfMatsedliListener, eða validAfMatsedliListener?
+    private void validAfMatsedliListener() {
         fxMatsedill.getFxMatsedill().getSelectionModel().selectedItemProperty().addListener((observable, oldvalue, newValue) -> {
             valinnRetturAfMatsedli = fxMatsedill.getFxMatsedill().getSelectionModel().getSelectedItem();
             fxSetjaIKorfuHandler();

@@ -11,17 +11,17 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * Represents a customer with a name and address.
+ * Klasi fyrir upplýsingar viðskiptavinar.
  */
 public class Vidskiptavinur {
-    private StringProperty nafn; // The customer's name
-    private StringProperty heimilisfang;// The customer's address
+    private final StringProperty nafn; // The customer's name
+    private final StringProperty heimilisfang;// The customer's address
 
     /**
-     * Creates a new customer with the given name and address.
+     * Býr til nýjan viðskiptaivn með nafni og hemilisfangi.
      *
-     * @param nafn         The customer's name
-     * @param heimilisfang The customer's address
+     * @param nafn         Nafn viðskiptavinar
+     * @param heimilisfang Heimilisfang viðskiptavinar
      */
     public Vidskiptavinur(String nafn, String heimilisfang) {
         this.nafn = new SimpleStringProperty(nafn);
@@ -29,18 +29,18 @@ public class Vidskiptavinur {
     }
 
     /**
-     * Returns the customer's name.
+     * Skilar nafn viðskiptavinar
      *
-     * @return The customer's name
+     * @return Nafn viðskiptavinar
      */
     public StringProperty getNafn() {
         return nafn;
     }
 
     /**
-     * Returns the customer's address.
+     * Skilar heimilisfang viðskiptavinar
      *
-     * @return The customer's address
+     * @return Heimilisfang viðskiptavinar
      */
     public StringProperty getHeimilisfang() {
         return heimilisfang;

@@ -9,17 +9,17 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * Represents a food item with a name and price.
+ * Klasi fyrir veitingarnar - nafn réttar og verð þeirra.
  */
 public class Veitingar {
-    private StringProperty matur; // The name of the food item
-    private IntegerProperty verd; // The price of the food item
+    private final StringProperty matur; // The name of the food item
+    private final IntegerProperty verd; // The price of the food item
 
     /**
-     * Creates a new food item with the given name and price.
+     * Býr til nýjan matur hlut með nafni og verði.
      *
-     * @param matur The name of the food item
-     * @param verd  The price of the food item
+     * @param matur Nafn réttisins
+     * @param verd  Verð réttisins
      */
     public Veitingar(String matur, int verd) {
         this.matur = new SimpleStringProperty(matur);
@@ -27,20 +27,18 @@ public class Veitingar {
     }
 
     /**
-     * Returns the price of the food item.
+     * Skilar verð réttisins
      *
-     * @return The price of the food item
+     * @return Verð réttisins
      */
     public IntegerProperty getVerd() {
         return verd;
     }
 
     /**
-     * Returns a string representation of the food item in the format
-     * "name        price", where "name" is left-aligned in a 22-character
-     * field and "price" is right-aligned in a 6-character field.
+     * Skilar strengi sem táknar réttinn á þennan hátt:  "nafn        price".
      *
-     * @return A string representation of the food item
+     * @return Streng af réttinum.
      */
     @Override
     public String toString() {

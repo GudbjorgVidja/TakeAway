@@ -45,23 +45,35 @@ public class GreidslaController {
                 "\n\nÁætlaður afhendingartími er eftir " + afhendingartimiToString());
     }
 
-
     /**
-     * reiknar út afhendingartíma af handahófi og setur upp sem streng.
+     * Býr til streng sem inniheldur afhendingartíma.
      *
-     * @return bid, áætlaður biðtími sem strengur
+     * @param heildarbid heildarfjöldi mínútna sem afhendingartími á að reikna út frá
+     * @return strengur sem inniheldur afhendingartímann í lesanlegri formi
+     */
+    private String buaTilAfhendingartima(int heildarbid) {
+        String afhending = "";
+        int klst = heildarbid / 60;
+        int min = heildarbid % 60;
+
+        if (klst > 0) {
+            afhending = klst + " klst";
+        }
+        if (min != 0) {
+            afhending += " og " + min + " mín";
+        }
+        return afhending;
+    }
+    /**
+     * Býr til streng sem inniheldur afhendingartíma með því að kalla á aðferðina buaTilAfhendingartima með slembitölu
+     * sem er fengin með að draga slembitölu á bilinu [0, 1440). Þessi aðferð skilar strengnum sem inniheldur
+     * afhendingartímann.
+     *
+     * @return strengur sem inniheldur afhendingartímann í lesanlegri formi
      */
     private String afhendingartimiToString() {
         int heildarbid = (int) (Math.random() * 1440);
-        String bid = "";
-        int klst = heildarbid / 60;
-        int min = heildarbid - 60 * klst;
-
-
-        //todo gera sér aðferð? (extract method)
-        if (klst > 0) bid = klst + " klst";
-        if (min != 0) bid += " og " + min + " mín";
-        return bid;
+        return buaTilAfhendingartima(heildarbid);
     }
 
     /**
