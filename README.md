@@ -11,31 +11,21 @@ This project supports the Maven goals compile, test, exec:java, package and site
 
 ## Design patterns
 
-The Observer pattern is used, by implementing listeners.
+The Observer pattern is used, by implementing listeners and bindings.
 
-- In GreidslaController: 
-  - A listener, the observer is veitingarList in Karfa, and the observed is a method to make a
-          new text
-- in Karfa: 
-  - a listener observing the contents of Karfa, to calculate the total price of the order.
-- in PontunController: 
-  - a listener on the last selected item from a listView of the menu, to add that item to Karfa.
-  - a binding the listView in Karfa with the observableList<Veitingar> from the backend
-  - a binding Heildarverd from the backend with the label
-  - two bidirectional bindings, binds contents from textfields bound with Vidskiptavinur values of name and address
-- in VidskiptavinurDialog: 
-  - ilagi takkin disableProperty bundið við textfields fyrir nafn og heimilisfang.
-- The Observer pattern is used, by implementing listeners and bindings
-    - A listener in GreidslaController. The observer is veitingarList in Karfa, and the observed is a method to make a
+- In GreidslaController:
+    - A listener, the observer is veitingarList in Karfa, and the observed is a method to make a
       new text
-    - in Karfa: a listener observing the contents of Karfa, to calculate the total price of the order.
-    - in PontunController: a listener on the last selected item from a listView of the menu, to add that item to Karfa.
-    - in PontunController: binding the listView in Karfa with the observableList<Veitingar> from the backend
-    - in Pontuncontroller: binding Heildarverd from the backend with the label
-    - In VidskiptavinurDialog: two bidirectional bindings
-        - contents from textfields bound with Vidskiptavinur values of name and address
-    - in ViðskiptavinurDialog: ilagi takkin disableProperty bundið við textfields fyrir nafn og heimilisfang.
-
+- in Karfa:
+    - a listener observing the contents of Karfa, to calculate the total price of the order.
+- in PontunController:
+    - a listener on the last selected item from a listView of the menu, to add that item to Karfa.
+    - a binding the listView in Karfa with the observableList<Veitingar> from the backend
+    - a binding Heildarverd from the backend with the label
+    - two bidirectional bindings, binds contents from textfields bound with Vidskiptavinur values of name and address
+- in VidskiptavinurDialog:
+    - ilagi takkin disableProperty bundið við textfields fyrir nafn og heimilisfang.
+  
 ## Documentation
 
 [Documentation](src/site/markdown/documentation.md)
