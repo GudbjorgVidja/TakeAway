@@ -51,7 +51,7 @@ public class KarfaTest {
     }
 
     @Test
-    public void testHeildarverdTakaUrHandvirkt() { //hafa þetta test líka?
+    public void testHeildarverdTakaUrHandvirkt() {
         karfa.veitingarList().addAll(v1, v2);
         karfa.veitingarList().remove(0);
         assertEquals(karfa.getHeildarverd().get(), reiknaKarfaHeildarverd());
