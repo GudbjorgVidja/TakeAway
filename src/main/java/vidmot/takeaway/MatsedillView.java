@@ -53,9 +53,8 @@ public class MatsedillView extends BorderPane {
     private void lesaInnVeitingar() {
         String runa = "Hamborgari, 2590, Kjötbollur, 3005, Kaffi, 200, Vatn, 990, Ávaxtasalat, 4490, Steik, 800, Kartöflusalat, 700, Gos, 500, Safi, 3000";
         String[] stokStok = runa.split(", ");
-        for (int i = 0; i < stokStok.length; i += 2) {//i alltaf slétt tala
+        for (int i = 0; i < stokStok.length; i += 2) {
             matsedill.baetaVidMatsedil(new Veitingar(stokStok[i], Integer.parseInt(stokStok[i + 1])));
-            //matsedill.setjaGogn(stokStok[i], Integer.parseInt(stokStok[i + 1]));
         }
     }
 
