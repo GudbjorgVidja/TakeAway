@@ -85,7 +85,7 @@ public class PontunController {
     private void validAfMatsedliListener() {
         fxMatsedill.getFxMatsedill().getSelectionModel().selectedItemProperty().addListener((observable, oldvalue, newValue) -> {
             valinnRetturAfMatsedli = fxMatsedill.getFxMatsedill().getSelectionModel().getSelectedItem();
-            fxSetjaIKorfuHandler();
+            setjaIKorfu();
         });
     }
 
@@ -99,8 +99,7 @@ public class PontunController {
     /**
      * Þegar ýtt er á hlut á matseðli er hann sendur hingað og settur í körfu
      */
-    private void fxSetjaIKorfuHandler() {
-        //todo endurnefna, held að samkvæmt skilgreiningu sé þetta ekki handler. kallað á einu sinni, úr listener
+    private void setjaIKorfu() {
         karfa.baetaVidMatsedil(valinnRetturAfMatsedli);
     }
 
@@ -122,7 +121,7 @@ public class PontunController {
             }
 
         } else {
-            geraLoginDialog(); //virkar líka að hafa bara stutta aðferð
+            geraLoginDialog();
         }
 
     }

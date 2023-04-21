@@ -93,7 +93,7 @@ public class GreidslaController {
     }
 
     /**
-     * aðferð sem gerir Alert dialog sem lætur vita að pöntun hafi verið móttekin
+     * Aðferð sem gerir Alert dialog sem lætur vita að pöntun hafi verið móttekin
      */
     private void birtaStadfestingAlertDialog() {
         String spurning = "";
@@ -106,7 +106,7 @@ public class GreidslaController {
     }
 
     /**
-     * ýtt á til baka hnapp í greiðslusenunni.
+     * Ýtt á til baka hnapp í greiðslusenunni.
      * Fer til baka í PontunController, karfan er eins og hún var
      *
      * @param actionEvent ýtt á til baka hnapp

@@ -22,16 +22,6 @@ public class Matsedill {
     }
 
     /**
-     * Býr til nýjann matar hlut (rétt) með nafni og verði, og bætir honum við matseðilinn.
-     *
-     * @param matur Nafn réttisins
-     * @param verd  Verð réttisins
-     */
-    public void setjaGogn(String matur, int verd) {
-        veitingarListi.add(new Veitingar(matur, verd));
-    }
-
-    /**
      * Bætir við rétt á matseðil.
      *
      * @param veitingar Réttur sem á að bæta við.
@@ -39,9 +29,7 @@ public class Matsedill {
     public void baetaVidMatsedil(Veitingar veitingar) {
         veitingarListi.add(veitingar);
     }
-
-    //todo hafa annað hvort aðferðina setjaGogn eða baetaVidMatsedil, ekki bæði. Gera það sama með smá mismunandi parametra
-
+    
 
     /**
      * Fjarlægir réttinn af matseðli á gefnu index.
