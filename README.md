@@ -25,7 +25,7 @@ The Observer pattern is used, by implementing listeners and bindings.
     - two bidirectional bindings, binds contents from textfields bound with Vidskiptavinur values of name and address
 - in VidskiptavinurDialog:
     - ilagi takkin disableProperty bundið við textfields fyrir nafn og heimilisfang.
-  
+
 ## Documentation
 
 [Documentation](src/site/markdown/documentation.md)
@@ -40,13 +40,13 @@ Instructions to run the program:
 
 For Windows:
 
-- use maven to clean and package
+- use maven commands clean and package
 - Open the terminal
 - type "source runjar.cmd"
     - er það bara þannig á Windows?
 - press enter
 
-First the user might need to clean and package. (virkar ekki hjá mér nema bara í maven flipanum)
+First the user might need to clean and package.
 
 ## To do
 
@@ -60,7 +60,6 @@ First the user might need to clean and package. (virkar ekki hjá mér nema bara
         - test
         - package
         - site
-    - Staðfesta:
         - exec:java
 - Junit test fyrir bakendann
     - we did not cover how to test user interfaces, so no need to test the UI, but you can test classes/the business
