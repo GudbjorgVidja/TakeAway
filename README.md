@@ -22,7 +22,7 @@ The Observer pattern is used, by implementing listeners and bindings.
 An observable is the value that is being watched, while an observer changes with the observable
 
 - In `GreidslaController.java`:
-    - A listener, the observer is veitingarList in Karfa, and the observable is a method to make a
+    - A listener, the observable is veitingarList in Karfa, and the observer is a method to make a
       new text
 - in `Karfa.java`:
     - a listener, the observer is the total price of the order, and the observable is the contents of Karfa.
