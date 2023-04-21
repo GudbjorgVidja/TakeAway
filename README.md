@@ -38,12 +38,11 @@ The license used was an [MIT License](LICENSE).
 
 Instructions to run the program:
 
-For Windows:
+For Mac and Windows:
 
 - use maven commands clean and package
 - Open the terminal
 - type "source runjar.cmd"
-    - er það bara þannig á Windows?
 - press enter
 
 First the user might need to clean and package.
