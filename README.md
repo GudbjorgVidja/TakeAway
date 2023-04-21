@@ -11,7 +11,7 @@ This project supports the Maven goals compile, test, exec:java, package and site
 
 ## Design patterns
 
-- The Observer pattern is used, by implementing listeners.
+- The Observer pattern is used, by implementing listeners and bindings
     - A listener in GreidslaController. The observer is veitingarList in Karfa, and the observed is a method to make a
       new text
     - in Karfa: a listener observing the contents of Karfa, to calculate the total price of the order.
