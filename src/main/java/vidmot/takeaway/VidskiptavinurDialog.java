@@ -51,7 +51,7 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
 
 
     /**
-     * regla gerð fyrir það hvenær í lagi takkinn er óvirkur. Ef textfield fyrir nafn eða heimilisfang er tómt, þá er
+     * Regla gerð fyrir það hvenær í lagi takkinn er óvirkur. Ef textfield fyrir nafn eða heimilisfang er tómt, þá er
      * takkinn óvirkur.
      */
     private void iLagiTakkiDisabledRegla() {
@@ -61,7 +61,7 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
 
 
     /**
-     * result converter settur fyrir dialoginn. Hér er niðurstaða móttekin og umbreytt í gildi sem skilað er í
+     * Result converter settur fyrir dialoginn. Hér er niðurstaða móttekin og umbreytt í gildi sem skilað er í
      * PontunController
      * b er ButtonType, ButtonData fyrir í lagi takkann er OK_DONE, else er þegar ýtt er á annað en í lagi og þannig
      * hætt við skáningu.
