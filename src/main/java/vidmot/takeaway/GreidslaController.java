@@ -83,7 +83,7 @@ public class GreidslaController {
      * @param actionEvent ýtt á staðfesta hnapp
      */
     @FXML
-    private void fxStadfestingHandler(ActionEvent actionEvent) { //todo eyða parameter?
+    private void fxStadfestingHandler(ActionEvent actionEvent) {
         birtaStadfestingAlertDialog();
 
         pontunController.getKarfa().veitingarList().clear();
@@ -112,7 +112,7 @@ public class GreidslaController {
      * @param actionEvent ýtt á til baka hnapp
      */
     @FXML
-    private void fxTilBakaHandler(ActionEvent actionEvent) { //todo eyða parameter?
+    private void fxTilBakaHandler(ActionEvent actionEvent) {
         ViewSwitcher.switchTo(View.PONTUN);
     }
 }
