@@ -138,14 +138,7 @@ public class PontunController {
         loginDialog.setContentText("Lykilorð: ");
 
         Optional<String> utkoma = loginDialog.showAndWait();
-        if (utkoma.isPresent()) setInnskradur(true);
-    }
-
-    //það er innskráður notandi
-    public void setInnskradur(boolean b) {
-        fxGreidaHnappur.setDisable(false);
-        //TODO breyta þessu, kannski hafa ekkert viðfang?
-        //allavega laga þetta
+        if (utkoma.isPresent()) fxGreidaHnappur.setDisable(false);
     }
 
 
