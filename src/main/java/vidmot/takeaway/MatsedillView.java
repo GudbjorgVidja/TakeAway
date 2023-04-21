@@ -5,6 +5,7 @@
  */
 package vidmot.takeaway;
 
+import edu.princeton.cs.algs4.In;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
@@ -46,15 +47,14 @@ public class MatsedillView extends BorderPane {
     }
 
     /**
-     * Vesen með að lesa inn ur skrá og nennti ekki að skrifa heildalínnu tilað gera hvern rétt.
-     * Geri langan streng, réttur og verð til skiptis, aðskilin með kommu. Splitta upp í fylki, og nota lykkju
-     * TODO lesa veitingarnar inn úr skrá? Líklega best að nota In
+     * Les inn eina línu í einu úr skránni, en hver lína í veitingar.txt er String, int.
+     * Gerir Veitingar hlut úr línunni, og bætir við matseðilinn í viðmótinu þar til engin lína er eftir.
      */
     private void lesaInnVeitingar() {
-        String runa = "Hamborgari, 2590, Kjötbollur, 3005, Kaffi, 200, Vatn, 990, Ávaxtasalat, 4490, Steik, 800, Kartöflusalat, 700, Gos, 500, Safi, 3000";
-        String[] stokStok = runa.split(", ");
-        for (int i = 0; i < stokStok.length; i += 2) {
-            matsedill.baetaVidMatsedil(new Veitingar(stokStok[i], Integer.parseInt(stokStok[i + 1])));
+        In in = new In("src/main/java/vinnsla/takeaway/veitingar.txt");
+        while (in.hasNextChar()) {
+            String[] lina = in.readLine().split(", ");
+            matsedill.baetaVidMatsedil(new Veitingar(lina[0], Integer.parseInt(lina[1])));
         }
     }
 

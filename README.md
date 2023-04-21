@@ -12,6 +12,7 @@ This project supports the Maven goals compile, test, exec:java, package and site
 ## Design patterns
 
 The Observer pattern is used, by implementing listeners and bindings.
+An observable is the value that is being watched, while an observer changes with the observable
 
 - In GreidslaController:
     - A listener, the observer is veitingarList in Karfa, and the observed is a method to make a
@@ -44,8 +45,6 @@ For Mac and Windows:
 - Open the terminal
 - type "source runjar.cmd"
 - press enter
-
-First the user might need to clean and package.
 
 ## To do
 
