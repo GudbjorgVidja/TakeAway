@@ -71,7 +71,7 @@ public class GreidslaController {
      *
      * @return strengur sem inniheldur afhendingartímann í lesanlegri formi
      */
-    private String afhendingartimiToString() { //todo held við ættum að sameina þetta og buaTilAfhendingartima, meikar ekki alveg sens
+    private String afhendingartimiToString() {
         int heildarbid = (int) (Math.random() * 1440);
         return buaTilAfhendingartima(heildarbid);
     }
