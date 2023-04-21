@@ -5,7 +5,6 @@
  */
 package vidmot.takeaway;
 
-import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
@@ -25,7 +24,6 @@ public class MatsedillView extends BorderPane {
 
     //Smiður sem les inn fxml skrá, og setur svo rót og controller sem this
     public MatsedillView() {
-        //TODO gera design pattern til að lesa inn fxml skrár? eða nota viewSwitcher?
         FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("matsedill-view.fxml"));
         fxmlloader.setRoot(this);
         fxmlloader.setController(this);
@@ -39,13 +37,7 @@ public class MatsedillView extends BorderPane {
         matsedill = new Matsedill();
         lesaInnVeitingar();
 
-
-        //todo breytist ekki á keyrslutíma, þarf líklega ekki listener
         fxMatsedill.setItems(matsedill.veitingarList());
-        matsedill.veitingarList().addListener((ListChangeListener<Veitingar>) change -> {
-            fxMatsedill.setItems(matsedill.veitingarList());
-        });
-
     }
 
     //skilar ListView hlut fyrir matseðilinn

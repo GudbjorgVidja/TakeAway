@@ -21,7 +21,6 @@ import java.util.Optional;
 public class PontunController {
     private Veitingar valinnRetturAfMatsedli;//Veitingar hlutur sem síðast var ýtt á af matseðli (til að bæta í körfu)
 
-    //TODO initializa annars staðar
     private IntegerProperty indexRetturUrKorfu;// = new SimpleIntegerProperty();//index hlutar sem smellt er á í körfu (til að fjarlægja)
     @FXML
     private Label fxHeildarverd;//heildarverð label
